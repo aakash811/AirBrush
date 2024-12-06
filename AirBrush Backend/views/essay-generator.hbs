@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+http://localhost:4000/create-page?pageTitle=Essay Generator&whatToGenerate=essay&url=essay-generator
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/fav.png">
+    <title>Essay Generator - AI4Chat</title>
+		<meta name="description" content="Craft insightful essays effortlessly using advanced AI. Tailored content for academic and professional needs, backed by top-tier AI models.">
+		<meta name="robots" content="index, follow">
+		
+		<!-- FB meta tags -->
+		<meta property="og:title" content="Essay Generator - AI4Chat">
+		<meta property="og:description" content="Craft insightful essays effortlessly using advanced AI. Tailored content for academic and professional needs, backed by top-tier AI models.">
+		<meta property="og:image" content="https://i.postimg.cc/0NfzStnt/AI4Chat.png">
+		<meta property="og:url" content="https://www.ai4chat.co">
+		
+		<!-- Twitter meta tags -->
+		<meta name="twitter:title" content="Essay Generator - AI4Chat">
+		<meta name="twitter:description" content="Craft insightful essays effortlessly using advanced AI. Tailored content for academic and professional needs, backed by top-tier AI models.">
+		<meta name="twitter:image" content="https://i.postimg.cc/0NfzStnt/AI4Chat.png">
+
+
+
+    <!-- bootstrap min css -->
+    <link rel="stylesheet preload" href="/css/plugins/fontawesome-6.css" as="style">
+    <link rel="stylesheet preload" href="/css/plugins/unicons.css" as="style">
+    <link rel="stylesheet preload" href="/css/plugins/swiper.min.css" as="style">
+    <link rel="stylesheet preload" href="/css/vendor/metismenu.css" as="style">
+    <link rel="stylesheet preload" href="/css/vendor/bootstrap.min.css" as="style">
+    <!-- custom css style -->
+    <link rel="stylesheet preload" href="/css/style.css" as="style">
+</head>
+
+<body class="dark-version">
+
+    <!-- rts header area start -->
+    <header class="header-one header--sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="header-main-wrapper">
+                        <a href="index" class="logo">
+                            <img src="/images/logo/ai2.png" alt="logo" style="max-width: 111px">
+                        </a>
+                        <!-- nav -->
+                        <div class="nav-area-main d-xl-block d-lg-block d-md-none d-sm-none d-none">
+                            <nav>
+                                <ul>
+																
+																		<li><a class="links-main" href="use-cases">Use Cases</a></li>
+																		<li><a class="links-main" href="features">Features</a></li>
+																		<li><a class="links-main" href="pricing">Pricing</a></li>
+																		<li><a class="links-main" href="tutorials">Tutorials</a></li>
+																		<li><a class="links-main" href="faq">FAQ</a></li>
+                                    
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- nav end -->
+                        <div class="button-area">
+                            <a href="https://app.ai4chat.co/login" class="rts-btn btn-lonly mr--30">Sign in</a>
+                            <a href="https://app.ai4chat.co/register" class="rts-btn btn-blur">Get Started</a>
+                        </div>
+
+                        <div class="menu-btn d-xl-none d-lg-none d-md-block d-sm-block" id="menu-btn">
+                            <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect y="14" width="20" height="2" fill="#1F1F25"></rect>
+                                <rect y="7" width="20" height="2" fill="#1F1F25"></rect>
+                                <rect width="20" height="2" fill="#1F1F25"></rect>
+                            </svg>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- rts header area end -->
+
+<!-- rts breadcrumb area start-->
+    <div class="rts-bread-crumb-area bg_image">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-inne">
+                        <div class="title-area">
+                            <h1 class="bread-title">Essay Generator</h1>
+                            <div class="inner-wrapper">
+                                <a href="https://www.ai4chat.co">Home</a>/<a href="use-cases">Use Cases</a>/
+                                <a href="#" class="active">Essay Generator</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rts breadcrumb area end -->
+<style>
+.flex-app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.app-btn {
+  width: 45%;
+  max-width: 220px;
+  color: #fff;
+  margin: 20px 10px;
+  text-align: left;
+  border-radius: 5px;
+  text-decoration: none;
+  font-family: "Lucida Grande", sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+  border: 1px #3996fb solid;
+  padding: 10px 10px;
+}
+
+.app-btn.blu {
+  background-color: #101010;
+  transition: background-color 0.25s linear;
+}
+
+.app-btn.blu:hover {
+  background-color: #454545;
+}
+
+.app-btn i {
+  width: 20%;
+  text-align: center;
+  font-size: 36px;
+  margin-right: 7px;
+}
+
+.app-btn .big-txt {
+  font-size: 25px;
+  text-transform: capitalize;
+}
+
+/* Media query for screens below 768 pixels */
+@media screen and (max-width: 768px) {
+  .flex-app {
+    flex-direction: column; /* Stack children vertically */
+  }
+
+  .app-btn {
+    width: 90%; /* Adjust the button width to take more space */
+    margin: 7px auto; /* Center the buttons horizontally */
+  }
+  
+  .app-btn i {
+    margin-bottom: 7px; /* Add space below the icon */
+  }
+  
+  .app-btn span {
+    margin-top: 7px; /* Add space above the text */
+  }
+}
+
+
+</style>
+
+		<!-- rts case details bottom area start -->
+    <div class="rts-case-details-bottom-area rts-section-gap plr_sm--15">
+        <div class="container-use-case-d">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="case-details-title-area-d">
+                        
+												
+												
+												
+												
+												
+												<div id="whatToGenerate" style="display: none;">Essay</div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<style>
+
+        .uniqueContainer {
+            display: flex;
+            gap: 20px;
+        }
+
+        .unique-left-column {
+            flex: 80%;
+            background: #1F1F25;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .unique-right-column {
+            flex: 20%;
+            padding: 20px;
+            background: #1F1F25;
+            border-radius: 10px;
+						border: 2px dotted #3996fb; /* Add dotted border */
+						justify-content: center; /* Center content vertically */
+						align-items: center; /* Center content horizontally */
+
+        }
+
+        .unique-count-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            text-align: center;
+            font-size: 15px;
+						display: flex; /* Add display property */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+        }
+
+				
+				.uniqueCSS {
+            width: 32%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-right: 1%;
+						cursor: pointer;
+						
+        }
+				
+				.dropDownCSS {
+					background-color: #1F1F25;
+					color: white;
+				}
+				
+				#generateOutput {
+				background-color: #3996fb;
+				color: white;
+				}
+
+        .uniqueAdvanced {
+            display: none;
+        }
+
+        .outputBoxes > div {
+            margin-top: 20px;
+            background-color: #3996fb;
+						color: white;
+            padding: 15px;
+            position: relative;
+        }
+
+        .uniqueButtons {
+            display: none;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+				
+
+        .copyButton {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .loading-spinner {
+		    display: none;
+		    text-align: center;
+		    margin-top: 20px;
+		}
+
+
+        @media screen and (max-width: 768px) {
+            .unique-right-column {
+                display: none;
+            }
+
+            .uniqueCSS {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .outputBoxes > div {
+                position: relative;
+            }
+
+            .copyButton {
+                bottom: 10px;
+                right: 10px;
+            }
+        }
+				
+			
+    </style>
+		
+    <div class="uniqueContainer" style="width: 100%;">
+        <div class="unique-left-column">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h2>Write about</h2>
+                
+<select id="languageDropdown" class="uniqueCSS dropDownCSS">
+
+    <option value="English">English</option>
+    <option value="Afrikaans">Afrikaans</option>
+    <option value="Albanian">Albanian</option>
+    <option value="Amharic">Amharic</option>
+    <option value="Arabic">Arabic</option>
+    <option value="Armenian">Armenian</option>
+    <option value="Azerbaijani">Azerbaijani</option>
+    <option value="Bengali">Bengali</option>
+    <option value="Bosnian">Bosnian</option>
+    <option value="Bulgarian">Bulgarian</option>
+    <option value="Chinese (Simplified)">Chinese (Simplified)</option>
+    <option value="Catalan">Catalan</option>
+    <option value="Chinese (Traditional)">Chinese (Traditional)</option>
+    <option value="Croatian">Croatian</option>
+    <option value="Czech">Czech</option>
+    <option value="Danish">Danish</option>
+    <option value="Dari">Dari</option>
+    <option value="Dutch">Dutch</option>
+    <option value="Estonian">Estonian</option>
+    <option value="Finnish">Finnish</option>
+    <option value="French">French</option>
+    <option value="French Canadian">French Canadian</option>
+    <option value="Georgian">Georgian</option>
+    <option value="German">German</option>
+    <option value="Greek">Greek</option>
+    <option value="Gujarati">Gujarati</option>
+    <option value="Haitian Creole">Haitian Creole</option>
+    <option value="Hausa">Hausa</option>
+    <option value="Hebrew">Hebrew</option>
+    <option value="Hindi">Hindi</option>
+    <option value="Hungarian">Hungarian</option>
+    <option value="Icelandic">Icelandic</option>
+    <option value="Indonesian">Indonesian</option>
+    <option value="Italian">Italian</option>
+    <option value="Japanese">Japanese</option>
+    <option value="Kannada">Kannada</option>
+    <option value="Kazakh">Kazakh</option>
+    <option value="Korean">Korean</option>
+    <option value="Latvian">Latvian</option>
+    <option value="Lithuanian">Lithuanian</option>
+    <option value="Macedonian">Macedonian</option>
+    <option value="Malay">Malay</option>
+    <option value="Malayalam">Malayalam</option>
+    <option value="Maltese">Maltese</option>
+    <option value="Mongolian">Mongolian</option>
+    <option value="Norwegian">Norwegian</option>
+    <option value="Farsi (Persian)">Farsi (Persian)</option>
+    <option value="Pashto">Pashto</option>
+    <option value="Polish">Polish</option>
+    <option value="Portuguese">Portuguese</option>
+    <option value="Romanian">Romanian</option>
+    <option value="Russian">Russian</option>
+    <option value="Serbian">Serbian</option>
+    <option value="Sinhala">Sinhala</option>
+    <option value="Slovak">Slovak</option>
+    <option value="Slovenian">Slovenian</option>
+    <option value="Somali">Somali</option>
+    <option value="Spanish">Spanish</option>
+    <option value="Spanish Mexican">Spanish Mexican</option>
+    <option value="Swahili">Swahili</option>
+    <option value="Swedish">Swedish</option>
+    <option value="Filipino Tagalog">Filipino Tagalog</option>
+    <option value="Tamil">Tamil</option>
+    <option value="Telugu">Telugu</option>
+    <option value="Thai">Thai</option>
+    <option value="Turkish">Turkish</option>
+    <option value="Ukrainian">Ukrainian</option>
+    <option value="Urdu">Urdu</option>
+    <option value="Uzbek">Uzbek</option>
+    <option value="Vietnamese">Vietnamese</option>
+    <option value="Welsh">Welsh</option>
+</select>
+
+
+
+            </div>
+            <textarea id="inputText" style="width: 100%; height: 150px; border: 1px solid #3996fb;"></textarea>
+
+            <div style="margin-top: 10px;">
+                <button class="uniqueCSS" onclick="toggleuniqueAdvancedSettings()">Advanced</button>
+                <div class="uniqueAdvanced" style="margin-top: 20px; margin-bottom: 20px;">
+								Tone: 
+                    <select id="toneDropdown" class="uniqueCSS dropDownCSS" style="margin-left: 10px;">
+    <option value="Default">Default</option>
+    <option value="Friendly">Friendly</option>
+    <option value="Formal">Formal</option>
+    <option value="Casual">Casual</option>
+    <option value="Professional">Professional</option>
+    <option value="Diplomatic">Diplomatic</option>
+    <option value="Confident">Confident</option>
+    <option value="Academic">Academic</option>
+    <option value="Simplified">Simplified</option>
+    <option value="Bold">Bold</option>
+    <option value="Empathetic">Empathetic</option>
+    <option value="Engaging">Engaging</option>
+    <option value="Direct">Direct</option>
+    <option value="Persuasive">Persuasive</option>
+</select>
+
+
+                    <input type="number" class="uniqueCSS" id="wordSize" placeholder="Word size" style="border: 1px solid #3996fb;">
+                </div>
+                <button class="uniqueCSS" id="generateOutput">Generate Output</button>
+                <div class="loading-spinner">
+				    <i class="fas fa-spinner fa-spin"></i> Loading...
+				</div>
+
+            </div>
+
+            <div class="outputBoxes"></div>
+
+            <div class="uniqueButtons">
+                <button class="uniqueCSS" id="loadMoreOutputs">Load more outputs</button>
+            </div>
+        </div>
+        <div class="unique-right-column">
+            <div class="unique-count-grid">
+                <div>
+                    <strong>Characters:</strong>
+                    <div id="charCount" style="font-size: 36px; color: #3996fb;">0</div>
+                </div>
+                <div>
+                    <strong>Words:</strong><br>
+                    <div id="wordCount" style="font-size: 36px; color: #3996fb;">0</div>
+                </div>
+                <div>
+                    <strong>Sentences:</strong>
+                    <div id="sentenceCount" style="font-size: 36px; color: #3996fb;">0</div>
+                </div>
+                <div>
+                    <strong>Paragraphs:</strong>
+                    <div id="paragraphCount" style="font-size: 36px; color: #3996fb;">1</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let outputCounter = 0;
+
+        function toggleuniqueAdvancedSettings() {
+            const uniqueAdvancedSettings = document.querySelector('.uniqueAdvanced');
+            if (uniqueAdvancedSettings.style.display === "none" || uniqueAdvancedSettings.style.display === "") {
+                uniqueAdvancedSettings.style.display = "flex";
+            } else {
+                uniqueAdvancedSettings.style.display = "none";
+            }
+        }
+
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+
+        function setCookie(name, value, days) {
+            const date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            const expires = `expires=${date.toUTCString()}`;
+            document.cookie = `${name}=${value}; ${expires}; path=/`;
+        }
+
+        function generateUserId() {
+            const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            let userId = '';
+            for (let i = 0; i < 10; i++) {
+                userId += chars[Math.floor(Math.random() * chars.length)];
+            }
+            return userId;
+        }
+
+        function getUserId() {
+            let userId = getCookie('userid');
+            if (!userId) {
+                userId = generateUserId();
+                setCookie('userid', userId, 30); // Cookie expires in 30 days
+            }
+            return userId;
+        }
+
+        function determineString(language, tone, wordCount, textBoxText) {
+    // Extract content from div
+    const contentType = document.getElementById('whatToGenerate').textContent;
+
+    // Check if the tone is 'Default' and wordCount is not specified
+    if (tone === 'Default' && !wordCount) {
+        return `Generate a ${contentType} in ${language} for the following text: ${textBoxText}`;
+    }
+
+    // Check if the tone is 'Default'
+    if (tone === 'Default') {
+        return `Generate a ${contentType} in ${language} for the following text. The ${contentType} should be ${wordCount} words long. Here is the text for which the ${contentType} needs to be generated: ${textBoxText}`;
+    }
+
+    // Check if wordCount is not specified
+    if (!wordCount) {
+        return `Generate a ${contentType} in ${language} for the following text. The ${contentType} should be in the ${tone} tone. Here is the text for which the ${contentType} needs to be generated: ${textBoxText}`;
+    }
+
+    // Default case
+    return `Generate a ${contentType} in ${language} for the following text. The ${contentType} should be ${wordCount} words long and in the ${tone} tone. Here is the text for which the ${contentType} needs to be generated: ${textBoxText}`;
+}
+
+
+
+        
+        
+        function generateAndDisplayOutput() {
+        	if (outputCounter < 2) {
+		    const inputTextValue = document.getElementById("inputText").value.trim();
+		    if (inputTextValue === "") {
+		        alert("Please enter some text.");
+		        return;
+		    }
+		    
+		    const spinner = document.querySelector(".loading-spinner");
+		    spinner.style.display = "block";  // Show the spinner
+		
+		    const userId = getUserId();
+		    const country = Intl.DateTimeFormat().resolvedOptions().timeZone.split('/')[0];
+		    const language = document.getElementById("languageDropdown").value;
+		    const tone = document.getElementById("toneDropdown").value;
+		    const wordCount = document.getElementById("wordSize").value;
+		
+		    const description = determineString(language, tone, wordCount, inputTextValue);
+		    const url = `https://yw85opafq6.execute-api.us-east-1.amazonaws.com/default/boss_mode_15aug?text=${encodeURIComponent(description)}&country=${country}&user_id=${userId}`;
+		
+		    fetch(url)
+		        .then(response => response.json())
+		        .then(data => {
+		            console.log(data);
+		            let outputBox = document.createElement("div");
+		            outputBox.innerHTML = `<p>${data}</p>
+		            <button class="copyButton uniqueCSS" onclick="copyOutput(this)"><i class="fas fa-copy"></i></button>`;
+		            document.querySelector(".outputBoxes").appendChild(outputBox);
+		            document.querySelector(".uniqueButtons").style.display = "flex";
+		            spinner.style.display = "none";  // Hide the spinner                    
+		        })
+		        .catch(error => {
+		            let outputBox = document.createElement("div");
+		            outputBox.innerHTML = `<p>There was an error in processing your request. Please try again.</p>
+		            <button class="copyButton uniqueCSS" onclick="copyOutput(this)"><i class="fas fa-copy"></i></button>`;
+		            document.querySelector(".outputBoxes").appendChild(outputBox);
+		            document.querySelector(".uniqueButtons").style.display = "flex";
+		        });
+		
+		    outputCounter++;
+			}
+		}
+
+	
+	document.getElementById("generateOutput").addEventListener("click", generateAndDisplayOutput);
+
+
+        function copyOutput(buttonElement) {
+            let text = buttonElement.previousSibling.innerText;
+            let textArea = document.createElement("textarea");
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand("Copy");
+            textArea.remove();
+        }
+
+        document.getElementById("inputText").addEventListener("input", function () {
+            let text = this.value;
+            document.getElementById("charCount").innerText = text.length;
+
+            let words = text.split(" ").filter(Boolean);
+            document.getElementById("wordCount").innerText = words.length;
+
+            let sentences = text.split(/[.!?]+/).filter(Boolean);
+            document.getElementById("sentenceCount").innerText = sentences.length;
+
+            let paragraphs = text.split(/\n\n+/).filter(Boolean);
+            document.getElementById("paragraphCount").innerText = paragraphs.length;
+        });
+        
+       document.getElementById("loadMoreOutputs").addEventListener("click", function () {
+    if (outputCounter < 2) {
+        generateAndDisplayOutput();
+    } else {
+        const language = document.getElementById("languageDropdown").value;
+        const tone = document.getElementById("toneDropdown").value;
+        const wordCount = document.getElementById("wordSize").value;
+        const inputTextValue = document.getElementById("inputText").value.trim();
+
+        const description = determineString(language, tone, wordCount, inputTextValue);
+        const query = encodeURIComponent(description);
+        const signupURL = `https://app.ai4chat.co/signup?ref=EssayGenerator&query=${query}&language=${language}&tone=${tone}&wordCount=${wordCount}`;
+
+        let outputBox = document.createElement("div");
+        outputBox.innerHTML = `<p>To generate more outputs, please sign up for a free account <a id="signupLink" href="${signupURL}" style="color: red; font-weight: bolder;">here</a>.</p>`;
+        document.querySelector(".outputBoxes").appendChild(outputBox);
+        this.style.display = "none";
+    }
+});
+
+
+
+
+    </script>
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rts case details bottom area end -->
+
+
+    <!-- rts case details bottom area start -->
+    <div class="rts-case-details-bottom-area rts-section-gap plr_sm--15">
+        <div class="container-use-case-d">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="case-details-title-area-d">
+                        
+												<h2 class="title">AI4Chat's One-Click Essay Generator</h2>
+
+												<p class="disc">Unlock the power of AI with AI4Chat's Essay Generator, a state-of-the-art tool designed to simplify academic and professional writing. By harnessing the capabilities of leading chatbot technologies, we ensure high-quality, coherent, and informative essays at the click of a button.</p>
+
+												<h3>Why Use the AI4Chat Essay Generator?</h3>
+												<p class="disc">Writing essays, whether for school, college, or professional purposes, can be a daunting task. With our Essay Generator, you eliminate the stress and time-consuming process of drafting, structuring, and refining content. Simply input your topic, click, and let AI do the magic.</p>
+
+												<h3>Applications across Disciplines</h3>
+												<p class="disc">From literature and history to science and business, our Essay Generator caters to a broad spectrum of subjects. Each essay is meticulously crafted to ensure accuracy, relevancy, and depth, making it a perfect companion for students, professionals, and educators alike.</p>
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rts case details bottom area end -->
+
+
+    <!-- rts faq area stat -->
+    <div class="rts-faq-area rts-section-gap bg_faq">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-conter-area">
+                        <h2 class="title">
+                            Questions about AI4Chat? <br>
+                            We are here to help!
+                        </h2>
+                        <p class="disc">
+                            For any inquiries, drop us an email at <a href="mailto:support@ai4chat.co">support@ai4chat.co</a>. We’re always eager to assist and provide more information.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt--60">
+                <div class="col-lg-12">
+                    <div class="accordion-area-one">
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        What Is AI4Chat?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        AI4Chat offers a unique platform where users can communicate and generate content using leading AI models like ChatGPT, GPT4, and Google Bard.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Which Languages Does AI4Chat Support?
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        AI4Chat is multilingual, offering users the flexibility to converse and generate content in numerous languages. Here is the complete list of supported languages:
+																				
+																				Afrikaans, Albanian, Amharic, Arabic, Armenian, Azerbaijani, Bengali, Bosnian, Bulgarian, Chinese (Simplified), Catalan, Chinese (Traditional), Croatian, Czech, Danish, Dari, Dutch, English, Estonian, Finnish, French, French Canadian, Georgian, German, Greek, Gujarati, Haitian Creole, Hausa, Hebrew, Hindi, Hungarian, Icelandic, Indonesian, Italian, Japanese, Kannada, Kazakh, Korean, Latvian, Lithuanian, Macedonian, Malay, Malayalam, Maltese, Mongolian, Norwegian, Farsi (Persian), Pashto, Polish, Portuguese, Romanian, Russian, Serbian, Sinhala, Slovak, Slovenian, Somali, Spanish, Spanish Mexican, Swahili, Swedish, Filipino Tagalog, Tamil, Telugu, Thai, Turkish, Ukrainian, Urdu, Uzbek, Vietnamese, Welsh
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        How Do I Toggle Between Different AI Models?
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Simply click on the blue AI button on our platform. From the dropdown, you can choose your desired AI model.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        Can I Personalize My Chats?
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Yes! You can change chat names, images, descriptions and even add labels, categories, and notes to your chats for a more personalized experience.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFive">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                        Is There An Option For Unlimited Usage?
+                                    </button>
+                                </h2>
+                                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Yes, AI4Chat offers an unlimited plan at $4/month or $40/year, allowing unlimited credits and generations.
+                                    </div>
+                                </div>
+                            </div>
+														<div class="accordion-item">
+                                <h2 class="accordion-header" id="headingSix">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                        Do I need a credit card to get started?
+                                    </button>
+                                </h2>
+                                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        No, you do not need a credit card to get started. Signing up for a free account does not require a card.
+                                    </div>
+                                </div>
+                            </div>
+														<div class="accordion-item">
+                                <h2 class="accordion-header" id="headingSeven">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                        Can I use the content generated using AI4Chat for commercial purposes?
+                                    </button>
+                                </h2>
+                                <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Yes, you have complete rights to the generated content and are free to use it in any capacity.
+                                    </div>
+                                </div>
+                            </div>
+														<div class="accordion-item">
+                                <h2 class="accordion-header" id="headingEight">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                        How do I contact support?
+                                    </button>
+                                </h2>
+                                <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        You can either contact our chat support team from the dashboard or drop us an email at <a href="mailto:support@ai4chat.co">support@ai4chat.co</a>.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rts faq area end -->
+		
+		<!-- app links start -->
+		<div class="flex-app social-btns">
+			<a class="app-btn blu flex-app vert" href="https://apps.apple.com/app/ai4chat-chat-art-music-video/id6478985890">
+				<i class="fab fa-apple"></i>
+				<span>Available on the <br/> <span class="big-txt">App Store</span></span>
+			</a>
+
+			<a class="app-btn blu flex-app vert" href="https://play.google.com/store/apps/details?id=com.app.ai4chat">
+				<i class="fab fa-google-play"></i>
+				<span>Get it on <br/> <span class="big-txt">Google Play</span></span>
+			</a>
+	
+	
+		</div>
+		<!-- app links end -->
+
+    <!-- cta area start -->
+    <div class="rts-cta-area rts-section-gapBottom  bg_faq">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="cta-main-wrapper bg_image">
+                        <div class="left">
+                            <h3 class="title">
+                                All set to level up <br>
+                                your content game?
+                            </h3>
+                            <a href="https://app.ai4chat.co/register" class="rts-btn btn-primary">Get Started For Free</a>
+                        </div>
+                        <div class="right">
+                            <img src="/images/cta/02.png" alt="cta-area">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- cta area end -->
+    
+
+
+    <!-- rts footer area start -->
+    <div class="rts-footer-area  bg-footer footer-one">
+        <div class="container rts-section-gapTop pb--100 pb_sm--30">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- footer main wrapper -->
+                    <div class="footer-one-main-wrapper">
+                        <!-- single sized  footer  -->
+                        <div class="footer-singl-wized left-logo">
+                            <div class="head">
+                                <a href="https://www.ai4chat.co">
+                                    <img src="/images/logo/ai2.png" alt="logo" style="max-width: 111px">
+                                </a>
+                            </div>
+                            <div class="body">
+                                <p class="dsic">
+                                     Multiple leading chatbots unified, offering instant AI responses across languages and devices seamlessly.
+                                </p>
+                                <div class="social-style-two">
+                                    <ul>
+                                        <li><a href="https://www.facebook.com/ai4chatco"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                        <li><a href="https://twitter.com/ai4chatco"><i class="fa-brands fa-twitter"></i></a></li>
+                                        <li><a href="https://www.linkedin.com/company/ai4chatco"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                        <li><a href="https://www.youtube.com/@ai4chatco"><i class="fa-brands fa-youtube"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single sized  footer end -->
+                        <!-- single sized  footer  -->
+                        <div class="footer-singl-wized">
+                            <div class="head">
+                                <h6 class="title">Info</h6>
+                            </div>
+                            <div class="body">
+                                <ul class="menu">
+                                    <li><a href="use-cases">Use Cases</a></li>
+                                    <li><a href="tutorials">Tutorials</a></li>
+                                    <li><a href="features">Features</a></li>
+                                    <li><a href="pricing">Pricing</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- single sized  footer end -->
+                        <!-- single sized  footer  -->
+                        <div class="footer-singl-wized">
+                            <div class="head">
+                                <h6 class="title">Account</h6>
+                            </div>
+                            <div class="body">
+                                <ul class="menu">
+                                    <li><a href="https://app.ai4chat.co/login">Login</a></li>
+                                    <li><a href="https://app.ai4chat.co/register">Register</a></li>
+                                    <li><a href="mailto:support@ai4chat.co">Support</a></li>
+																		<li><a href="faq">FAQ</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- single sized  footer end -->
+                        <!-- single sized  footer  -->
+                        <div class="footer-singl-wized input-area">
+                            <div class="head">
+                                <h6 class="title">Apps</h6>
+                            </div>
+                            <div class="body">
+                                <ul class="menu">
+                                    <li><a href="https://play.google.com/store/apps/details?id=com.app.ai4chat">Android</a></li>
+                                    <li><a href="https://apps.apple.com/app/ai4chat-chat-art-music-video/id6478985890">iPhone</a></li>
+                                    <li><a href="https://apps.apple.com/app/ai4chat-chat-art-music-video/id6478985890">iPad</a></li>
+                                    <li><a href="https://www.ai4chat.co/blog">Blog</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- single sized  footer end -->
+                    </div>
+                    <!-- footer main wrapper end -->
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- footer-copyright-area start -->
+                    <div class="copy-right-start-two">
+                        <p><a href="https://www.ai4chat.co" target="_blank">AI4Chat ©</a> 2023. All Rights Reserved.</p>
+                        <ul>
+                            <li><a href="terms">Terms</a></li>
+                            <li><a href="privacy">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <!-- footer-copyright-area end -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rts footer area end -->
+
+
+
+    <div id="anywhere-home" class="">
+    </div>
+
+    
+
+    <!-- header style two -->
+    <div id="side-bar" class="side-bar header-two" style="background-color: #151f39;">
+        <button class="close-icon-menu"><i class="far fa-times"></i></button>
+
+        <!-- mobile menu area start -->
+        <div class="mobile-menu-main">
+            <nav class="nav-main mainmenu-nav mt--30">
+                <ul class="mainmenu metismenu" id="mobile-menu-active">
+                    
+										<li class="parent"><a class="main" href="use-cases" style="color: #f3f3f3; border-bottom: 1px solid #f3f3f3">Use Cases</a></li>
+										<li class="parent"><a class="main" href="features" style="color: #f3f3f3; border-bottom: 1px solid #f3f3f3">Features</a></li>
+										<li class="parent"><a class="main" href="pricing" style="color: #f3f3f3; border-bottom: 1px solid #f3f3f3">Pricing</a></li>
+										<li class="parent"><a class="main" href="tutorials" style="color: #f3f3f3; border-bottom: 1px solid #f3f3f3">Tutorials</a></li>
+										<li class="parent"><a class="main" href="faq" style="color: #f3f3f3; border-bottom: 1px solid #f3f3f3">FAQ</a></li>
+                </ul>
+            </nav>
+						
+						<!-- app links start -->
+						<div class="flex-app social-btns">
+							<a class="app-btn blu flex-app vert" href="https://apps.apple.com/app/ai4chat-chat-art-music-video/id6478985890">
+								<i class="fab fa-apple"></i>
+								<span>Available on the <br/> <span class="big-txt">App Store</span></span>
+							</a>
+
+							<a class="app-btn blu flex-app vert" href="https://play.google.com/store/apps/details?id=com.app.ai4chat">
+								<i class="fab fa-google-play"></i>
+								<span>Get it on <br/> <span class="big-txt">Google Play</span></span>
+							</a>
+					
+					
+						</div>
+						<!-- app links end -->
+
+            <div class="rts-social-style-one pl--20 mt--100">
+                <ul>
+                    <li><a href="https://www.facebook.com/ai4chatco"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                        <li><a href="https://twitter.com/ai4chatco"><i class="fa-brands fa-twitter"></i></a></li>
+                                        <li><a href="https://www.linkedin.com/company/ai4chatco"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                        <li><a href="https://www.youtube.com/@ai4chatco"><i class="fa-brands fa-youtube"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- mobile menu area end -->
+    </div>
+    <!-- header style two End -->
+
+
+    <!-- rts backto top start -->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;"></path>
+        </svg>
+    </div>
+    <!-- rts backto top end -->
+
+
+    <script src="/js/vendor/jquery.min.js" defer></script>
+    <script src="/js/vendor/metismenu.js" defer></script>
+    <script src="/js/plugins/bootstrap.min.js" defer></script>
+    <script src="/js/plugins/swiper.js" defer></script>
+    <script src="/js/plugins/contact.form.js" defer></script>
+    <script src="/js/main.js" defer></script>
+
+</body>
+
+
+
+</html>

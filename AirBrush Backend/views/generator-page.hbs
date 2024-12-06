@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/fav.png">
+    <title>AI {{pageTitle}} [100% Free, No Login Required]</title>
+		<meta name="description" content="{{metaDescription}}">
+		<meta name="robots" content="index, follow">
+		
+		<!-- FB meta tags -->
+		<meta property="og:title" content="AI {{pageTitle}} [100% Free, No Login Required]">
+		<meta property="og:description" content="{{metaDescription}}">
+		<meta property="og:image" content="https://i.postimg.cc/0NfzStnt/AI4Chat.png">
+		<meta property="og:url" content="https://www.ai4chat.co/pages/{{url}}">
+		
+		<!-- Twitter meta tags -->
+		<meta name="twitter:title" content="AI {{pageTitle}} [100% Free, No Login Required]">
+		<meta name="twitter:description" content="{{metaDescription}}">
+		<meta name="twitter:image" content="https://i.postimg.cc/0NfzStnt/AI4Chat.png">
+
+
+
+    <!-- bootstrap min css -->
+    <link rel="stylesheet preload" href="/css/plugins/fontawesome-6.css" as="style">
+    <link rel="stylesheet preload" href="/css/plugins/unicons.css" as="style">
+    <link rel="stylesheet preload" href="/css/plugins/swiper.min.css" as="style">
+    <link rel="stylesheet preload" href="/css/vendor/metismenu.css" as="style">
+    <link rel="stylesheet preload" href="/css/vendor/bootstrap.min.css" as="style">
+    <!-- custom css style -->
+    <link rel="stylesheet preload" href="/css/style.css" as="style">
+</head>
+
+<body class="dark-version">
+
+    {{> desktop-menu}}
+
+<!-- rts breadcrumb area start-->
+    <div class="rts-bread-crumb-area bg_image">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-inne">
+                        <div class="title-area">
+                            <h1 class="bread-title">{{pageTitle}}</h1>
+                            <div class="inner-wrapper">
+                                <a href="https://www.ai4chat.co">Home</a>/<a href="use-cases">Use Cases</a>/
+                                <a href="#" class="active">{{pageTitle}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rts breadcrumb area end -->
+<style>
+.flex-app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.app-btn {
+  width: 45%;
+  max-width: 220px;
+  color: #fff;
+  margin: 20px 10px;
+  text-align: left;
+  border-radius: 5px;
+  text-decoration: none;
+  font-family: "Lucida Grande", sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+  border: 1px #3996fb solid;
+  padding: 10px 10px;
+}
+
+.app-btn.blu {
+  background-color: #101010;
+  transition: background-color 0.25s linear;
+}
+
+.app-btn.blu:hover {
+  background-color: #454545;
+}
+
+.app-btn i {
+  width: 20%;
+  text-align: center;
+  font-size: 36px;
+  margin-right: 7px;
+}
+
+.app-btn .big-txt {
+  font-size: 25px;
+  text-transform: capitalize;
+}
+
+/* Media query for screens below 768 pixels */
+@media screen and (max-width: 768px) {
+  .flex-app {
+    flex-direction: column; /* Stack children vertically */
+  }
+
+  .app-btn {
+    width: 90%; /* Adjust the button width to take more space */
+    margin: 7px auto; /* Center the buttons horizontally */
+  }
+  
+  .app-btn i {
+    margin-bottom: 7px; /* Add space below the icon */
+  }
+  
+  .app-btn span {
+    margin-top: 7px; /* Add space above the text */
+  }
+}
+
+
+</style>
+
+		<!-- rts case details bottom area start -->
+    <div class="rts-case-details-bottom-area rts-section-gap plr_sm--15">
+        <div class="container-use-case-d">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="case-details-title-area-d">
+                        
+												
+												
+												
+												
+												
+												<div id="whatToGenerate" style="display: none;">{{whatToGenerate}}</div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<style>
+
+        .uniqueContainer {
+            display: flex;
+            gap: 20px;
+        }
+
+        .unique-left-column {
+            flex: 80%;
+            background: #1F1F25;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .unique-right-column {
+            flex: 20%;
+            padding: 20px;
+            background: #1F1F25;
+            border-radius: 10px;
+						border: 2px dotted #3996fb; /* Add dotted border */
+						justify-content: center; /* Center content vertically */
+						align-items: center; /* Center content horizontally */
+
+        }
+
+        .unique-count-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            text-align: center;
+            font-size: 15px;
+						display: flex; /* Add display property */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+        }
+
+				
+				.uniqueCSS {
+            width: 32%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-right: 1%;
+						cursor: pointer;
+						
+        }
+				
+				.dropDownCSS {
+					background-color: #1F1F25;
+					color: white;
+				}
+				
+				#generateOutput {
+				background-color: #3996fb;
+				color: white;
+				}
+
+        .uniqueAdvanced {
+            display: none;
+        }
+
+        .outputBoxes > div {
+            margin-top: 20px;
+            background-color: #3996fb;
+						color: white;
+            padding: 15px;
+            position: relative;
+        }
+
+        .uniqueButtons {
+            display: none;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+				
+
+        .copyButton {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .loading-spinner {
+		    display: none;
+		    text-align: center;
+		    margin-top: 20px;
+		}
+
+
+        @media screen and (max-width: 768px) {
+            .unique-right-column {
+                display: none;
+            }
+
+            .uniqueCSS {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .outputBoxes > div {
+                position: relative;
+            }
+
+            .copyButton {
+                bottom: 10px;
+                right: 10px;
+            }
+        }
+				
+			
+    </style>
+		
+    <div class="uniqueContainer" style="width: 100%;">
+        <div class="unique-left-column">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h2>Write about</h2>
+                
+<select id="languageDropdown" class="uniqueCSS dropDownCSS">
+
+    <option value="English">English</option>
+    <option value="Afrikaans">Afrikaans</option>
+    <option value="Albanian">Albanian</option>
+    <option value="Amharic">Amharic</option>
+    <option value="Arabic">Arabic</option>
+    <option value="Armenian">Armenian</option>
+    <option value="Azerbaijani">Azerbaijani</option>
+    <option value="Bengali">Bengali</option>
+    <option value="Bosnian">Bosnian</option>
+    <option value="Bulgarian">Bulgarian</option>
+    <option value="Chinese (Simplified)">Chinese (Simplified)</option>
+    <option value="Catalan">Catalan</option>
+    <option value="Chinese (Traditional)">Chinese (Traditional)</option>
+    <option value="Croatian">Croatian</option>
+    <option value="Czech">Czech</option>
+    <option value="Danish">Danish</option>
+    <option value="Dari">Dari</option>
+    <option value="Dutch">Dutch</option>
+    <option value="Estonian">Estonian</option>
+    <option value="Finnish">Finnish</option>
+    <option value="French">French</option>
+    <option value="French Canadian">French Canadian</option>
+    <option value="Georgian">Georgian</option>
+    <option value="German">German</option>
+    <option value="Greek">Greek</option>
+    <option value="Gujarati">Gujarati</option>
+    <option value="Haitian Creole">Haitian Creole</option>
+    <option value="Hausa">Hausa</option>
+    <option value="Hebrew">Hebrew</option>
+    <option value="Hindi">Hindi</option>
+    <option value="Hungarian">Hungarian</option>
+    <option value="Icelandic">Icelandic</option>
+    <option value="Indonesian">Indonesian</option>
+    <option value="Italian">Italian</option>
+    <option value="Japanese">Japanese</option>
+    <option value="Kannada">Kannada</option>
+    <option value="Kazakh">Kazakh</option>
+    <option value="Korean">Korean</option>
+    <option value="Latvian">Latvian</option>
+    <option value="Lithuanian">Lithuanian</option>
+    <option value="Macedonian">Macedonian</option>
+    <option value="Malay">Malay</option>
+    <option value="Malayalam">Malayalam</option>
+    <option value="Maltese">Maltese</option>
+    <option value="Mongolian">Mongolian</option>
+    <option value="Norwegian">Norwegian</option>
+    <option value="Farsi (Persian)">Farsi (Persian)</option>
+    <option value="Pashto">Pashto</option>
+    <option value="Polish">Polish</option>
+    <option value="Portuguese">Portuguese</option>
+    <option value="Romanian">Romanian</option>
+    <option value="Russian">Russian</option>
+    <option value="Serbian">Serbian</option>
+    <option value="Sinhala">Sinhala</option>
+    <option value="Slovak">Slovak</option>
+    <option value="Slovenian">Slovenian</option>
+    <option value="Somali">Somali</option>
+    <option value="Spanish">Spanish</option>
+    <option value="Spanish Mexican">Spanish Mexican</option>
+    <option value="Swahili">Swahili</option>
+    <option value="Swedish">Swedish</option>
+    <option value="Filipino Tagalog">Filipino Tagalog</option>
+    <option value="Tamil">Tamil</option>
+    <option value="Telugu">Telugu</option>
+    <option value="Thai">Thai</option>
+    <option value="Turkish">Turkish</option>
+    <option value="Ukrainian">Ukrainian</option>
+    <option value="Urdu">Urdu</option>
+    <option value="Uzbek">Uzbek</option>
+    <option value="Vietnamese">Vietnamese</option>
+    <option value="Welsh">Welsh</option>
+</select>
+
+
+
+            </div>
+            <textarea id="inputText" style="width: 100%; height: 150px; border: 1px solid #3996fb;"></textarea>
+
+            <div style="margin-top: 10px;">
+                <button class="uniqueCSS" onclick="toggleuniqueAdvancedSettings()">Advanced</button>
+                <div class="uniqueAdvanced" style="margin-top: 20px; margin-bottom: 20px;">
+								Tone: 
+                    <select id="toneDropdown" class="uniqueCSS dropDownCSS" style="margin-left: 10px;">
+    <option value="Default">Default</option>
+    <option value="Friendly">Friendly</option>
+    <option value="Formal">Formal</option>
+    <option value="Casual">Casual</option>
+    <option value="Professional">Professional</option>
+    <option value="Diplomatic">Diplomatic</option>
+    <option value="Confident">Confident</option>
+    <option value="Academic">Academic</option>
+    <option value="Simplified">Simplified</option>
+    <option value="Bold">Bold</option>
+    <option value="Empathetic">Empathetic</option>
+    <option value="Engaging">Engaging</option>
+    <option value="Direct">Direct</option>
+    <option value="Persuasive">Persuasive</option>
+</select>
+
+
+                    <input type="number" class="uniqueCSS" id="wordSize" placeholder="Word size" style="border: 1px solid #3996fb;">
+                </div>
+                <button class="uniqueCSS" id="generateOutput">Generate Output</button>
+                <div class="loading-spinner">
+				    <i class="fas fa-spinner fa-spin"></i> Loading...
+				</div>
+
+            </div>
+
+            <div class="outputBoxes"></div>
+
+            <div class="uniqueButtons">
+                <button class="uniqueCSS" id="loadMoreOutputs">Load more outputs</button>
+            </div>
+            
+            <div id="proOfferingBanner" style="display: none; margin-top: 20px; background-color: #1F1F25; color: #f3f3f3; padding: 20px; border-radius: 10px; border: 2px solid #3996fb; text-align: center;">
+		    <h3 style="color: #3996fb;">Want some more features?</h3>
+		    <ul style="list-style: none; padding: 0;">
+		        <li>- History to store generated content</li>
+		        <li>- Access to mobile apps for content generation on the go</li>
+		        <li>- Access to 500+ other AI tools and templates</li>
+		    </ul>
+		    <button class="uniqueCSS" id="proYesButton" style="margin-top: 10px; background-color: #3996fb; color: white;">Sure, I want them</button>
+		    <button class="uniqueCSS" id="proNoButton" style="margin-top: 10px; background-color: #dddddd; color: black;">Nah, I don't need it</button>
+		</div>
+		
+            
+        </div>
+        <div class="unique-right-column">
+            <div class="unique-count-grid">
+                <div>
+                    <strong>Characters:</strong>
+                    <div id="charCount" style="font-size: 36px; color: #3996fb;">0</div>
+                </div>
+                <div>
+                    <strong>Words:</strong><br>
+                    <div id="wordCount" style="font-size: 36px; color: #3996fb;">0</div>
+                </div>
+                <div>
+                    <strong>Sentences:</strong>
+                    <div id="sentenceCount" style="font-size: 36px; color: #3996fb;">0</div>
+                </div>
+                <div>
+                    <strong>Paragraphs:</strong>
+                    <div id="paragraphCount" style="font-size: 36px; color: #3996fb;">1</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let outputCounter = 0;
+        
+
+
+    
+    function updateAllLinks() {
+        var baseUrl = 'https://app.ai4chat.co/signup?ref=';
+		    var path = window.location.pathname.split('/').filter(part => part).pop() || 'homepage';
+		    var deviceType = window.innerWidth > 768 ? 'Desktop' : 'Mobile';
+        const language = document.getElementById("languageDropdown").value;
+	        const tone = document.getElementById("toneDropdown").value;
+	        const wordCount = document.getElementById("wordSize").value;
+	        const inputTextValue = document.getElementById("inputText").value.trim();
+	        const contentType = document.getElementById('whatToGenerate').textContent;
+	
+	        const description = determineString(language, tone, wordCount, inputTextValue);
+	        const query = encodeURIComponent(description);
+	        const signupURL = `https://app.ai4chat.co/signup?ref=${path}-${deviceType}&contentType=${contentType}&inputTextValue=${inputTextValue}&query=${query}&language=${language}&tone=${tone}&wordCount=${wordCount}`;
+	
+			// Assuming `elements` is an array containing the IDs of the elements you want to update
+			var elements = ["bottomBarLink", "GetStartedTop", "GetStartedBottom", "GetStartedMobileMenu"]; // Replace with your actual element IDs
+			// Array containing referral ID suffixes corresponding to each element
+			var referralSuffixes = ["BottomBar", "Top", "Bottom", "MobileMenu"]; // Ensure this has the same number of entries as `elements`
+
+			
+			// Verify that both arrays have the same length to prevent mismatched indexes
+			if (elements.length === referralSuffixes.length) {
+			// Loop through each ID in the `elements` array
+			    elements.forEach(function(id, index) {
+			        var element = document.getElementById(id); // Get the element by its ID
+			        if (element) {
+			            element.href = `https://app.ai4chat.co/signup?ref=${path}-GetStarted-${deviceType}-${referralSuffixes[index]}&contentType=${contentType}&inputTextValue=${inputTextValue}&query=${query}&language=${language}&tone=${tone}&wordCount=${wordCount}`;
+			        }
+			    });
+			} else {
+			    console.error("Error: `elements` and `referralSuffixes` arrays do not have the same length.");
+			}
+
+		    return signupURL;
+    }
+        
+        document.getElementById("proYesButton").addEventListener("click", function() {
+		    window.location.href = updateAllLinks();
+		});
+		
+		document.getElementById("proNoButton").addEventListener("click", function() {
+		    document.getElementById("proOfferingBanner").style.display = "none";
+		});
+
+        function toggleuniqueAdvancedSettings() {
+            const uniqueAdvancedSettings = document.querySelector('.uniqueAdvanced');
+            if (uniqueAdvancedSettings.style.display === "none" || uniqueAdvancedSettings.style.display === "") {
+                uniqueAdvancedSettings.style.display = "flex";
+            } else {
+                uniqueAdvancedSettings.style.display = "none";
+            }
+        }
+
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+
+        function setCookie(name, value, days) {
+            const date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            const expires = `expires=${date.toUTCString()}`;
+            document.cookie = `${name}=${value}; ${expires}; path=/`;
+        }
+
+        function generateUserId() {
+            const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            let userId = '';
+            for (let i = 0; i < 10; i++) {
+                userId += chars[Math.floor(Math.random() * chars.length)];
+            }
+            return userId;
+        }
+
+        function getUserId() {
+            let userId = getCookie('userid');
+            if (!userId) {
+                userId = generateUserId();
+                setCookie('userid', userId, 30); // Cookie expires in 30 days
+            }
+            return userId;
+        }
+
+        function determineString(language, tone, wordCount, textBoxText) {
+    // Extract content from div
+    const contentType = document.getElementById('whatToGenerate').textContent;
+
+    // Check if the tone is 'Default' and wordCount is not specified
+    if (tone === 'Default' && !wordCount) {
+        return `Generate a ${contentType} in ${language} for the following text: ${textBoxText}`;
+    }
+
+    // Check if the tone is 'Default'
+    if (tone === 'Default') {
+        return `Generate a ${contentType} in ${language} for the following text. The ${contentType} should be ${wordCount} words long. Here is the text for which the ${contentType} needs to be generated: ${textBoxText}`;
+    }
+
+    // Check if wordCount is not specified
+    if (!wordCount) {
+        return `Generate a ${contentType} in ${language} for the following text. The ${contentType} should be in the ${tone} tone. Here is the text for which the ${contentType} needs to be generated: ${textBoxText}`;
+    }
+
+    // Default case
+    return `Generate a ${contentType} in ${language} for the following text. The ${contentType} should be ${wordCount} words long and in the ${tone} tone. Here is the text for which the ${contentType} needs to be generated: ${textBoxText}`;
+}
+
+
+
+        function showBanner() {
+        	// After generating the first output, show the Pro Offering Banner
+	        
+		    if (outputCounter === 1) {
+		        document.getElementById("proOfferingBanner").style.display = "block";
+		    }
+		}
+        
+        function generateAndDisplayOutput() {
+        	if (outputCounter < 4) {
+		    const inputTextValue = document.getElementById("inputText").value.trim();
+		    if (inputTextValue === "") {
+		        alert("Please enter some text.");
+		        return;
+		    }
+		    
+		    const spinner = document.querySelector(".loading-spinner");
+		    spinner.style.display = "block";  // Show the spinner
+		
+		    const userId = getUserId();
+		    const country = Intl.DateTimeFormat().resolvedOptions().timeZone.split('/')[0];
+		    const language = document.getElementById("languageDropdown").value;
+		    const tone = document.getElementById("toneDropdown").value;
+		    const wordCount = document.getElementById("wordSize").value;
+		
+		    const description = determineString(language, tone, wordCount, inputTextValue);
+		    const url = `https://yw85opafq6.execute-api.us-east-1.amazonaws.com/default/boss_mode_15aug?text=${encodeURIComponent(description)}&country=${country}&user_id=${userId}`;
+		
+		    fetch(url)
+		        .then(response => response.json())
+		        .then(data => {
+		            console.log(data);
+		            let outputBox = document.createElement("div");
+		            outputBox.innerHTML = `<p>${data}</p>
+		            <button class="copyButton uniqueCSS" onclick="copyOutput(this)"><i class="fas fa-copy"></i></button>`;
+		            document.querySelector(".outputBoxes").appendChild(outputBox);
+		            document.querySelector(".uniqueButtons").style.display = "flex";
+		            spinner.style.display = "none";  // Hide the spinner    
+					showBanner();      
+					let tempVar = updateAllLinks();         
+		        })
+		        .catch(error => {
+		            let outputBox = document.createElement("div");
+		            outputBox.innerHTML = `<p>There was an error in processing your request. Please try again.</p>
+		            <button class="copyButton uniqueCSS" onclick="copyOutput(this)"><i class="fas fa-copy"></i></button>`;
+		            document.querySelector(".outputBoxes").appendChild(outputBox);
+		            document.querySelector(".uniqueButtons").style.display = "flex";
+		        });
+		
+		    outputCounter++;
+			}
+		}
+
+	
+	document.getElementById("generateOutput").addEventListener("click", generateAndDisplayOutput);
+
+
+        function copyOutput(buttonElement) {
+            let text = buttonElement.previousSibling.innerText;
+            let textArea = document.createElement("textarea");
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand("Copy");
+            textArea.remove();
+        }
+
+        document.getElementById("inputText").addEventListener("input", function () {
+            let text = this.value;
+            document.getElementById("charCount").innerText = text.length;
+
+            let words = text.split(" ").filter(Boolean);
+            document.getElementById("wordCount").innerText = words.length;
+
+            let sentences = text.split(/[.!?]+/).filter(Boolean);
+            document.getElementById("sentenceCount").innerText = sentences.length;
+
+            let paragraphs = text.split(/\n\n+/).filter(Boolean);
+            document.getElementById("paragraphCount").innerText = paragraphs.length;
+        });
+        
+       document.getElementById("loadMoreOutputs").addEventListener("click", function () {
+    if (outputCounter < 4) {
+        generateAndDisplayOutput();
+    } else {
+        const language = document.getElementById("languageDropdown").value;
+        const tone = document.getElementById("toneDropdown").value;
+        const wordCount = document.getElementById("wordSize").value;
+        const inputTextValue = document.getElementById("inputText").value.trim();
+        const contentType = document.getElementById('whatToGenerate').textContent;
+
+        const description = determineString(language, tone, wordCount, inputTextValue);
+        const query = encodeURIComponent(description);
+        const signupURL = updateAllLinks();
+
+        let outputBox = document.createElement("div");
+        outputBox.innerHTML = `<p>To generate more outputs, please sign up for a free account <a id="signupLink" href="${signupURL}" style="color: red; font-weight: bolder;">here</a>.</p>`;
+        document.querySelector(".outputBoxes").appendChild(outputBox);
+        this.style.display = "none";
+    }
+});
+
+
+
+
+    </script>
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rts case details bottom area end -->
+
+
+    <!-- rts case details bottom area start -->
+    <div class="rts-case-details-bottom-area rts-section-gap plr_sm--15">
+        <div class="container-use-case-d">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="case-details-title-area-d">
+                        
+												{{{pageContent}}} 
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rts case details bottom area end -->
+
+
+    {{> faq}}
+		
+		{{> apps}}
+
+    {{> cta}}
+
+
+    {{> footer}}
+
+
+
+    <div id="anywhere-home" class="">
+    </div>
+
+    
+
+    {{> mobile-menu}}
+
+
+    <!-- rts backto top start -->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;"></path>
+        </svg>
+    </div>
+    <!-- rts backto top end -->
+
+
+    <script src="/js/vendor/jquery.min.js" defer></script>
+    <script src="/js/vendor/metismenu.js" defer></script>
+    <script src="/js/plugins/bootstrap.min.js" defer></script>
+    <script src="/js/plugins/swiper.js" defer></script>
+    <script src="/js/plugins/contact.form.js" defer></script>
+    <script src="/js/main.js" defer></script>
+    
+    <!-- exit intent start -->
+
+<style>
+    /* Fullscreen overlay */
+    #overlay-background {
+        display: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8); /* Translucent black */
+        z-index: 1001; /* Below the popup */
+    }
+
+    /* Popup styles */
+    #unique-exit-intent-popup {
+        display: none;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        background-color: #1F1F25;
+        text-align: center;
+        z-index: 1002;
+        color: #f3f3f3;
+        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        border: 1px #3996fb solid;
+    }
+
+    /* Mobile devices */
+    @media (max-width: 767px) {
+        #unique-exit-intent-popup {
+            width: calc(100% - 20px); /* Slightly increase width while maintaining margin */
+            margin: 10px; /* Ensure there's some space around the popup */
+        }
+    }
+
+    /* Desktops and larger screens */
+    @media (min-width: 768px) {
+        #unique-exit-intent-popup {
+            width: 60%; /* Increase width to use more screen space */
+            max-width: 800px; /* Set a reasonable maximum width */
+        }
+    }
+
+    .exit-intent-button {
+        width: 80%;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+    }
+</style>
+
+<div id="overlay-background"></div>
+<div id="unique-exit-intent-popup">
+    <h3 style="color: #3996fb;">Want some more features?</h3>
+    <ul style="list-style: none; padding: 0;">
+        <li>- History to store generated content</li>
+        <li>- Access to mobile apps for content generation on the go</li>
+        <li>- Access to 500+ other AI tools and templates</li>
+    </ul>
+    <button class="exit-intent-button" id="exit-intent-yes" style="background-color: #3996fb; color: white;">Sure, I want them</button>
+    <button class="exit-intent-button" id="exit-intent-no" style="background-color: #dddddd; color: black;">Nah, I don't need it</button>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var i = 0;
+    var secondsCounter = 0;
+    setInterval(incrementSeconds, 1000);
+
+    function incrementSeconds() {
+        secondsCounter += 1;
+    }
+
+    function triggerExitIntent() {
+        if (i < 1 && secondsCounter >= 30) { // Ensure user has spent at least 30 seconds on the page
+            document.getElementById("unique-exit-intent-popup").style.display = 'block';
+            document.getElementById("overlay-background").style.display = 'block';
+            i++;
+            document.removeEventListener("scroll", scrollSpeed);
+        }
+    }
+
+    document.getElementById('exit-intent-yes').addEventListener('click', function() {
+        window.location.href = updateAllLinks();
+    });
+
+    document.getElementById('exit-intent-no').addEventListener('click', function() {
+        document.getElementById("unique-exit-intent-popup").style.display = 'none';
+        document.getElementById("overlay-background").style.display = 'none';
+    });
+
+    // Mouse leave detection for exit intent
+    document.addEventListener('mouseleave', function(e) {
+        if (e.clientY < 0 && secondsCounter >= 30) { // Check time spent before triggering
+            triggerExitIntent();
+        }
+    });
+
+    // Scroll speed detection for exit intent
+    var lastPosition = window.scrollY;
+    function scrollSpeed() {
+        var newPosition = window.scrollY;
+        setTimeout(() => {
+            var currentSpeed = newPosition - lastPosition;
+            if (currentSpeed > 160 && secondsCounter >= 30) { // Check time spent before triggering
+                triggerExitIntent();
+            }
+            lastPosition = newPosition;
+        }, 100);
+    }
+
+    setTimeout(() => {
+        document.addEventListener("scroll", scrollSpeed);
+    }, 1000);
+
+    // Time spent on page trigger for exit intent
+    setTimeout(triggerExitIntent, 45000); // 45 seconds
+});
+</script>
+<!-- exit intent end -->
+
+
+
+</body>
+
+
+
+</html>

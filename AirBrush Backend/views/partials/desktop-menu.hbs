@@ -1,0 +1,101 @@
+<!-- rts header area start -->
+<style>
+/* Ensure dropdown content is hidden initially */
+.dropdown-content {
+    display: none !important;
+    position: absolute;
+    background-color: #1F253B; /* Set background color */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block !important;
+}
+
+/* Style the dropdown links */
+.dropdown-content a {
+    color: #ffffff; /* White text color */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change link color on hover */
+.dropdown-content a:hover {
+    background-color: #4b557a; /* Slightly lighter background on hover */
+}
+
+.dropdown {
+    position: relative;
+}
+
+</style>
+    <header class="header-one header--sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="header-main-wrapper">
+                        <a href="/" class="logo">
+                            <img src="/images/logo/ai2.png" alt="logo" style="max-width: 111px">
+                        </a>
+                        <!-- nav -->
+                        <div class="nav-area-main d-xl-block d-lg-block d-md-none d-sm-none d-none">
+                            <nav>
+                                <ul>
+																
+																		<li class="dropdown">
+										                                    <a class="links-main">Use Cases</a>
+										                                    <ul class="dropdown-content">
+										                                        <li><a href="/use-cases">Use Cases</a></li>
+										                                        <li><a href="/gpts">GPTs</a></li>
+										                                        <li><a href="/characters">AI Characters</a></li>
+										                                    </ul>
+										                                </li>
+																		<li><a class="links-main" href="features">Features</a></li>
+																		<li><a class="links-main" href="pricing">Pricing</a></li>
+																		<li><a class="links-main" href="tutorials">Tutorials</a></li>
+																		<li><a class="links-main" href="faq">FAQ</a></li>
+                                    
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- nav end -->
+                        <div class="button-area">
+                            <a href="https://app.ai4chat.co/login" class="rts-btn btn-lonly mr--30">Sign in</a>
+                            <a href="https://app.ai4chat.co/register" class="rts-btn btn-blur">Get Started</a>
+                        </div>
+
+                        {{#if url}}
+            <div class="menu-btn d-xl-none d-lg-none d-md-block d-sm-block" id="menu-btn" style="display: flex; align-items: center; justify-content: space-between;">
+						    <div style="margin: 5px 20px 5px auto; font-size: 12px;">
+						        <a href="https://app.ai4chat.co/signup?ref={{url}}-GetStartedTop" class="rts-btn btn-primary" style="color: white; background-color: #007bff; padding: 7px 10px; border-radius: 5px; text-decoration: none; display: inline-block;">Get Started For Free</a>
+						    </div>
+						    <svg width="20" height="16" style="align-self: center;" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+						        <rect y="14" width="20" height="2" fill="#1F1F25"></rect>
+						        <rect y="7" width="20" height="2" fill="#1F1F25"></rect>
+						        <rect width="20" height="2" fill="#1F1F25"></rect>
+						    </svg>
+						</div>
+          {{else}}
+            <div class="menu-btn d-xl-none d-lg-none d-md-block d-sm-block" id="menu-btn" style="display: flex; align-items: center; justify-content: space-between;">
+						    <div style="margin: 5px 20px 5px auto; font-size: 12px;">
+						        <a id="GetStartedTop" href="https://app.ai4chat.co/signup?ref=GetStartedTop" class="rts-btn btn-primary" style="color: white; background-color: #007bff; padding: 7px 10px; border-radius: 5px; text-decoration: none; display: inline-block;">Get Started For Free</a>
+						    </div>
+						    <svg width="20" height="16" style="align-self: center;" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+						        <rect y="14" width="20" height="2" fill="#1F1F25"></rect>
+						        <rect y="7" width="20" height="2" fill="#1F1F25"></rect>
+						        <rect width="20" height="2" fill="#1F1F25"></rect>
+						    </svg>
+						</div>
+          {{/if}}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- rts header area end -->
+   

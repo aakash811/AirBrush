@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/fav.png">
+    <title>{{article.title}} - AI4Chat</title>
+		<meta name="description" content="{{article.metaDescription}}">
+		<meta name="robots" content="index, follow">
+		
+		<!-- FB meta tags -->
+		<meta property="og:title" content="{{article.title}} - AI4Chat">
+		<meta property="og:description" content="{{article.metaDescription}}">
+		<meta property="og:image" content="{{article.imageUrl}}">
+		<meta property="og:url" content="https://www.ai4chat.co/blog/{{article.url}}">
+		
+		<!-- Twitter meta tags -->
+		<meta name="twitter:title" content="{{article.title}} - AI4Chat">
+		<meta name="twitter:description" content="{{article.metaDescription}}">
+		<meta name="twitter:image" content="{{article.imageUrl}}">
+
+
+
+    <!-- bootstrap min css -->
+    <link rel="stylesheet preload" href="/css/plugins/fontawesome-6.css" as="style">
+    <link rel="stylesheet preload" href="/css/plugins/unicons.css" as="style">
+    <link rel="stylesheet preload" href="/css/plugins/swiper.min.css" as="style">
+    <link rel="stylesheet preload" href="/css/vendor/metismenu.css" as="style">
+    <link rel="stylesheet preload" href="/css/vendor/bootstrap.min.css" as="style">
+    <!-- custom css style -->
+    <link rel="stylesheet preload" href="/css/style.css" as="style">
+</head>
+
+<body class="dark-version">
+
+    <!-- rts header area start -->
+    <header class="header-one header--sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="header-main-wrapper">
+                        <a href="/" class="logo">
+                            <img src="/images/logo/ai2.png" alt="logo" style="max-width: 111px">
+                        </a>
+                        <!-- nav -->
+                        <div class="nav-area-main d-xl-block d-lg-block d-md-none d-sm-none d-none">
+                            <nav>
+                                <ul>
+																
+																		<li><a class="links-main" href="use-cases">Use Cases</a></li>
+																		<li><a class="links-main" href="features">Features</a></li>
+																		<li><a class="links-main" href="pricing">Pricing</a></li>
+																		<li><a class="links-main" href="tutorials">Tutorials</a></li>
+																		<li><a class="links-main" href="faq">FAQ</a></li>
+                                    
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- nav end -->
+                        <div class="button-area">
+                            <a href="https://app.ai4chat.co/login" class="rts-btn btn-lonly mr--30">Sign in</a>
+                            <a href="https://app.ai4chat.co/register" class="rts-btn btn-blur">Get Started</a>
+                        </div>
+
+                        <div class="menu-btn d-xl-none d-lg-none d-md-block d-sm-block" id="menu-btn">
+                            <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect y="14" width="20" height="2" fill="#1F1F25"></rect>
+                                <rect y="7" width="20" height="2" fill="#1F1F25"></rect>
+                                <rect width="20" height="2" fill="#1F1F25"></rect>
+                            </svg>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- rts header area end -->
+
+<!-- rts breadcrumb area start-->
+    <div class="rts-bread-crumb-area bg_image">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-inne">
+                        <div class="title-area">
+                            <h1 class="bread-title">Blog</h1>
+                            <div class="inner-wrapper">
+                                <a href="https://www.ai4chat.co">Home</a>/
+                                <a href="#" class="active">Blog</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rts breadcrumb area end -->
+<style>
+.flex-app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.app-btn {
+  width: 45%;
+  max-width: 220px;
+  color: #fff;
+  margin: 20px 10px;
+  text-align: left;
+  border-radius: 5px;
+  text-decoration: none;
+  font-family: "Lucida Grande", sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+  border: 1px #3996fb solid;
+  padding: 10px 10px;
+}
+
+.app-btn.blu {
+  background-color: #101010;
+  transition: background-color 0.25s linear;
+}
+
+.app-btn.blu:hover {
+  background-color: #454545;
+}
+
+.app-btn i {
+  width: 20%;
+  text-align: center;
+  font-size: 36px;
+  margin-right: 7px;
+}
+
+.app-btn .big-txt {
+  font-size: 25px;
+  text-transform: capitalize;
+}
+
+/* Media query for screens below 768 pixels */
+@media screen and (max-width: 768px) {
+  .flex-app {
+    flex-direction: column; /* Stack children vertically */
+  }
+
+  .app-btn {
+    width: 90%; /* Adjust the button width to take more space */
+    margin: 7px auto; /* Center the buttons horizontally */
+  }
+  
+  .app-btn i {
+    margin-bottom: 7px; /* Add space below the icon */
+  }
+  
+  .app-btn span {
+    margin-top: 7px; /* Add space above the text */
+  }
+}
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+<!-- blog details bread crumb -->
+    <div class="bd-breadcrumb">
+
+    </div>
+    <!-- blog details bread crumb end -->
+
+
+    <!-- rts blog ddetailks area start -->
+    <div class="rts-blog-details-area-top rts-section-gapTop bg-smooth">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- top blog details start -->
+                    <div class="row top-blog-details-start align-items-center">
+                        <div class="col-lg-6 col-md-12 col-sm-12 col-12 mb--30">
+                            <div class="title-area">
+                                <h2 class="title" style="color: white;">
+                                    {{article.title}}
+                                </h2>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                            <div class="authore-bd-area">
+                                <div class="main">
+                                    <img src="/images/blog/11.png" alt="Samuel - AI4Chat">
+                                    <div class="info">
+                                        <span class="deg" style="color: white;">Author</span>
+                                        <span class="name" style="color: white;">Samuel</span>
+                                    </div>
+                                </div>
+                                <div class="sub-area">
+                                    <p style="color: white;">Category</p>
+                                    <span class="deg" style="color: white;">Blog Content</span>
+                                </div>
+                                <div class="sub-area">
+                                    <p style="color: white;">Updated on</p>
+                                    <span class="deg" style="color: white;">{{article.date}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 mt--30">
+                            <div class="main-image-big" style="margin-bottom: 25px;">
+                                <img src="{{article.imageUrl}}" alt="{{article.title}}">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- top blog details end -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rts blog ddetailks area ends -->
+
+    <!-- blog details inner area start -->
+    <div class="blog-detail-inenr-area pt--45 rts-section-gapBottom plr_sm--15 bg-smooth">
+        <div class="container-bd">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="para-area-wrapper">
+                    
+                        {{{article.content}}}
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- blog details inner area end -->
+
+    <!-- related post area start -->
+    <div class="related-post-area-start rts-section-gapBottom bg-smooth" style="margin-top: 45px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="title">
+                        Related Posts
+                    </h2>
+                </div>
+            </div>
+            {{#each relatedArticles}}
+								    
+            <div class="row g-5 mt--10">
+                <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                    <!-- single blog area start -->
+                    <div class="single-blog-area-wrapper">
+                        <a href="/blog/{{this.url}}" class="thumbnail">
+                            <img src="{{this.imageUrl}}" alt="{{this.title}}">
+                        </a>
+                        <div class="inner-content">
+                            <div class="head">
+                                <span class="tag">Blog Content</span>
+                                <span class="time">{{this.timeToRead}} minute read</span>
+                            </div>
+                            <div class="body">
+                                <a href="#">
+                                    <h5 class="title">{{this.title}}</h5>
+                                </a>
+                                <div class="author-area">
+                                    <div class="author">
+                                        <img src="/images/blog/04.png" alt="Samuel - AI4Chat">
+                                        <div class="info">
+                                            <p>Samuel</p>
+                                            <span>Author</span>
+                                        </div>
+                                    </div>
+                                    <a href="/blog/{{this.url}}">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single blog area end -->
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    <!-- related post area end -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+		<!-- app links start -->
+		<div class="flex-app social-btns">
+			<a class="app-btn blu flex-app vert" href="https://apps.apple.com/app/ai4chat-chat-art-music-video/id6478985890">
+				<i class="fab fa-apple"></i>
+				<span>Available on the <br/> <span class="big-txt">App Store</span></span>
+			</a>
+
+			<a class="app-btn blu flex-app vert" href="https://play.google.com/store/apps/details?id=com.app.ai4chat">
+				<i class="fab fa-google-play"></i>
+				<span>Get it on <br/> <span class="big-txt">Google Play</span></span>
+			</a>
+	
+	
+		</div>
+		<!-- app links end -->
+
+    <!-- cta area start -->
+    <div class="rts-cta-area rts-section-gapBottom  bg_faq">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="cta-main-wrapper bg_image">
+                        <div class="left">
+                            <h3 class="title">
+                                All set to level up <br>
+                                your content game?
+                            </h3>
+                            <a href="https://app.ai4chat.co/register" class="rts-btn btn-primary">Get Started Now</a>
+                        </div>
+                        <div class="right">
+                            <img src="/images/cta/02.png" alt="cta-area">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- cta area end -->
+    
+
+
+    <!-- rts footer area start -->
+    <div class="rts-footer-area  bg-footer footer-one">
+        <div class="container rts-section-gapTop pb--100 pb_sm--30">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- footer main wrapper -->
+                    <div class="footer-one-main-wrapper">
+                        <!-- single sized  footer  -->
+                        <div class="footer-singl-wized left-logo">
+                            <div class="head">
+                                <a href="https://www.ai4chat.co">
+                                    <img src="/images/logo/ai2.png" alt="logo" style="max-width: 111px">
+                                </a>
+                            </div>
+                            <div class="body">
+                                <p class="dsic">
+                                     Multiple leading chatbots unified, offering instant AI responses across languages and devices seamlessly.
+                                </p>
+                                <div class="social-style-two">
+                                    <ul>
+                                        <li><a href="https://www.facebook.com/ai4chatco"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                        <li><a href="https://twitter.com/ai4chatco"><i class="fa-brands fa-twitter"></i></a></li>
+                                        <li><a href="https://www.linkedin.com/company/ai4chatco"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                        <li><a href="https://www.youtube.com/@ai4chatco"><i class="fa-brands fa-youtube"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single sized  footer end -->
+                        <!-- single sized  footer  -->
+                        <div class="footer-singl-wized">
+                            <div class="head">
+                                <h6 class="title">Info</h6>
+                            </div>
+                            <div class="body">
+                                <ul class="menu">
+                                    <li><a href="use-cases">Use Cases</a></li>
+                                    <li><a href="tutorials">Tutorials</a></li>
+                                    <li><a href="features">Features</a></li>
+                                    <li><a href="pricing">Pricing</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- single sized  footer end -->
+                        <!-- single sized  footer  -->
+                        <div class="footer-singl-wized">
+                            <div class="head">
+                                <h6 class="title">Account</h6>
+                            </div>
+                            <div class="body">
+                                <ul class="menu">
+                                    <li><a href="https://app.ai4chat.co/login">Login</a></li>
+                                    <li><a href="https://app.ai4chat.co/register">Register</a></li>
+                                    <li><a href="mailto:support@ai4chat.co">Support</a></li>
+																		<li><a href="faq">FAQ</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- single sized  footer end -->
+                        <!-- single sized  footer  -->
+                        <div class="footer-singl-wized input-area">
+                            <div class="head">
+                                <h6 class="title">Apps</h6>
+                            </div>
+                            <div class="body">
+                                <ul class="menu">
+                                    <li><a href="https://play.google.com/store/apps/details?id=com.app.ai4chat">Android</a></li>
+                                    <li><a href="https://apps.apple.com/app/ai4chat-chat-art-music-video/id6478985890">iPhone</a></li>
+                                    <li><a href="https://apps.apple.com/app/ai4chat-chat-art-music-video/id6478985890">iPad</a></li>
+                                    <li><a href="https://www.ai4chat.co/blog">Blog</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- single sized  footer end -->
+                    </div>
+                    <!-- footer main wrapper end -->
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- footer-copyright-area start -->
+                    <div class="copy-right-start-two">
+                        <p><a href="https://www.ai4chat.co" target="_blank">AI4Chat ©</a> 2023. All Rights Reserved.</p>
+                        <ul>
+                            <li><a href="terms">Terms</a></li>
+                            <li><a href="privacy">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <!-- footer-copyright-area end -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rts footer area end -->
+
+
+
+    <div id="anywhere-home" class="">
+    </div>
+
+    
+
+    <!-- header style two -->
+    <div id="side-bar" class="side-bar header-two" style="background-color: #151f39;">
+        <button class="close-icon-menu"><i class="far fa-times"></i></button>
+
+        <!-- mobile menu area start -->
+        <div class="mobile-menu-main">
+            <nav class="nav-main mainmenu-nav mt--30">
+                <ul class="mainmenu metismenu" id="mobile-menu-active">
+                    
+										<li class="parent"><a class="main" href="use-cases" style="color: #f3f3f3; border-bottom: 1px solid #f3f3f3">Use Cases</a></li>
+										<li class="parent"><a class="main" href="features" style="color: #f3f3f3; border-bottom: 1px solid #f3f3f3">Features</a></li>
+										<li class="parent"><a class="main" href="pricing" style="color: #f3f3f3; border-bottom: 1px solid #f3f3f3">Pricing</a></li>
+										<li class="parent"><a class="main" href="tutorials" style="color: #f3f3f3; border-bottom: 1px solid #f3f3f3">Tutorials</a></li>
+										<li class="parent"><a class="main" href="faq" style="color: #f3f3f3; border-bottom: 1px solid #f3f3f3">FAQ</a></li>
+                </ul>
+            </nav>
+						
+						<!-- app links start -->
+						<div class="flex-app social-btns">
+							<a class="app-btn blu flex-app vert" href="https://apps.apple.com/app/ai4chat-chat-art-music-video/id6478985890">
+								<i class="fab fa-apple"></i>
+								<span>Available on the <br/> <span class="big-txt">App Store</span></span>
+							</a>
+
+							<a class="app-btn blu flex-app vert" href="https://play.google.com/store/apps/details?id=com.app.ai4chat">
+								<i class="fab fa-google-play"></i>
+								<span>Get it on <br/> <span class="big-txt">Google Play</span></span>
+							</a>
+					
+					
+						</div>
+						<!-- app links end -->
+
+            <div class="rts-social-style-one pl--20 mt--100">
+                <ul>
+                    <li><a href="https://www.facebook.com/ai4chatco"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                        <li><a href="https://twitter.com/ai4chatco"><i class="fa-brands fa-twitter"></i></a></li>
+                                        <li><a href="https://www.linkedin.com/company/ai4chatco"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                        <li><a href="https://www.youtube.com/@ai4chatco"><i class="fa-brands fa-youtube"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- mobile menu area end -->
+    </div>
+    <!-- header style two End -->
+
+
+    <!-- rts backto top start -->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;"></path>
+        </svg>
+    </div>
+    <!-- rts backto top end -->
+
+
+    <script src="/js/vendor/jquery.min.js" defer></script>
+    <script src="/js/vendor/metismenu.js" defer></script>
+    <script src="/js/plugins/bootstrap.min.js" defer></script>
+    <script src="/js/plugins/swiper.js" defer></script>
+    <script src="/js/plugins/contact.form.js" defer></script>
+    <script src="/js/main.js" defer></script>
+
+</body>
+
+
+
+</html>

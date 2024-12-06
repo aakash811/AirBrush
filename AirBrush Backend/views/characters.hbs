@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/fav.png">
+    <title>AI Characters - AI4Chat</title>
+		<meta name="description" content="Explore AI4Chat's AI characters: Chat with celebrities and historical figures across languages, using your favorite LLM. Discover how AI4Chat revolutionizes conversations.">
+		<meta name="robots" content="index, follow">
+		
+		<!-- FB meta tags -->
+		<meta property="og:title" content="AI Characters - AI4Chat">
+		<meta property="og:description" content="Explore AI4Chat's AI characters: Chat with celebrities and historical figures across languages, using your favorite LLM. Discover how AI4Chat revolutionizes conversations.">
+		<meta property="og:image" content="https://i.postimg.cc/0NfzStnt/AI4Chat.png">
+		<meta property="og:url" content="https://www.ai4chat.co">
+		
+		<!-- Twitter meta tags -->
+		<meta name="twitter:title" content="AI Characters - AI4Chat">
+		<meta name="twitter:description" content="Explore AI4Chat's AI characters: Chat with celebrities and historical figures across languages, using your favorite LLM. Discover how AI4Chat revolutionizes conversations.">
+		<meta name="twitter:image" content="https://i.postimg.cc/0NfzStnt/AI4Chat.png">
+
+
+
+    <!-- bootstrap min css -->
+    <link rel="stylesheet preload" href="/css/plugins/fontawesome-6.css" as="style">
+    <link rel="stylesheet preload" href="/css/plugins/unicons.css" as="style">
+    <link rel="stylesheet preload" href="/css/plugins/swiper.min.css" as="style">
+    <link rel="stylesheet preload" href="/css/vendor/metismenu.css" as="style">
+    <link rel="stylesheet preload" href="/css/vendor/bootstrap.min.css" as="style">
+    <!-- custom css style -->
+    <link rel="stylesheet preload" href="/css/style.css" as="style">
+</head>
+
+<body class="dark-version">
+
+    {{> desktop-menu}}
+
+<!-- rts breadcrumb area start-->
+    <div class="rts-bread-crumb-area bg_image">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-inne">
+                        <div class="title-area">
+                            <h1 class="bread-title">AI Characters</h1>
+                            <div class="inner-wrapper">
+                                <a href="https://www.ai4chat.co">Home</a>/
+                                <a href="#" class="active">Characters</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rts breadcrumb area end -->
+<style>
+.flex-app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.app-btn {
+  width: 45%;
+  max-width: 220px;
+  color: #fff;
+  margin: 20px 10px;
+  text-align: left;
+  border-radius: 5px;
+  text-decoration: none;
+  font-family: "Lucida Grande", sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+  border: 1px #3996fb solid;
+  padding: 10px 10px;
+}
+
+.app-btn.blu {
+  background-color: #101010;
+  transition: background-color 0.25s linear;
+}
+
+.app-btn.blu:hover {
+  background-color: #454545;
+}
+
+.app-btn i {
+  width: 20%;
+  text-align: center;
+  font-size: 36px;
+  margin-right: 7px;
+}
+
+.app-btn .big-txt {
+  font-size: 25px;
+  text-transform: capitalize;
+}
+
+/* Media query for screens below 768 pixels */
+@media screen and (max-width: 768px) {
+  .flex-app {
+    flex-direction: column; /* Stack children vertically */
+  }
+
+  .app-btn {
+    width: 90%; /* Adjust the button width to take more space */
+    margin: 7px auto; /* Center the buttons horizontally */
+  }
+  
+  .app-btn i {
+    margin-bottom: 7px; /* Add space below the icon */
+  }
+  
+  .app-btn span {
+    margin-top: 7px; /* Add space above the text */
+  }
+}
+
+
+</style>
+
+
+		<!-- rts case area start -->
+    <div class="rts-case-area rts-section-gap bg-smooth-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-conter-area">
+                        <span class="pre-title-bg">Please use the search option below to find the desired AI character for your requirement</span>
+                        <h2 class="title">
+                            List Of All AI Characters
+                        </h2>
+                    </div>
+                
+            
+                
+                    <style>
+								#searchInput {
+										width: 100%;
+										padding: 12px;
+										margin-bottom: 10px;
+										box-sizing: border-box;
+										border: 1px #3996fb solid;
+								}
+
+								#myList li {
+										padding: 8px;
+										border-bottom: 1px solid #ddd;
+								}
+
+								#myList li:last-child {
+										border-bottom: none;
+								}
+
+								</style>
+								
+
+								<input type="text" id="searchInput" placeholder="Type your use case here...">
+								<p><i><b>Note: Click on any use case below to open its dedicated page</b></i></p>
+
+								<ul id="myList">
+								    {{#each characters}}
+								        <li><a href="/character/{{this.url}}">{{this.pageTitle}}</a></li>
+								    {{/each}}
+								</ul>
+
+
+								<script>
+								document.getElementById('searchInput').addEventListener('keyup', function() {
+										// Get the input value, converted to lowercase for a case-insensitive search
+										let filter = this.value.toLowerCase();
+
+										// Get all the <li> elements
+										let liElements = document.getElementById('myList').getElementsByTagName('li');
+
+										// Loop through the <li> elements
+										for (let i = 0; i < liElements.length; i++) {
+												let li = liElements[i];
+
+												// If the list item contains the search term, show it, otherwise hide it
+												if (li.innerHTML.toLowerCase().indexOf(filter) > -1) {
+														li.style.display = "";
+												} else {
+														li.style.display = "none";
+												}
+										}
+								});
+
+								</script>
+
+
+                
+								</div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <!-- rts case area end -->
+
+
+    
+
+    {{> faq}}
+		
+		{{> apps}}
+
+    {{> cta}}
+
+    {{> footer}}
+
+
+
+    <div id="anywhere-home" class="">
+    </div>
+    
+    {{> mobile-menu}}
+
+    <!-- rts backto top start -->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;"></path>
+        </svg>
+    </div>
+    <!-- rts backto top end -->
+
+
+    <script src="/js/vendor/jquery.min.js" defer></script>
+    <script src="/js/vendor/metismenu.js" defer></script>
+    <script src="/js/plugins/bootstrap.min.js" defer></script>
+    <script src="/js/plugins/swiper.js" defer></script>
+    <script src="/js/plugins/contact.form.js" defer></script>
+    <script src="/js/main.js" defer></script>
+
+</body>
+
+
+
+</html>

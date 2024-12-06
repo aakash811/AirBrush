@@ -1,0 +1,83 @@
+<style>
+.flex-app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.app-btn {
+  width: 45%;
+  max-width: 220px;
+  color: #fff;
+  margin: 20px 10px;
+  text-align: left;
+  border-radius: 5px;
+  text-decoration: none;
+  font-family: "Lucida Grande", sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+  border: 1px #3996fb solid;
+  padding: 10px 10px;
+}
+
+.app-btn.blu {
+  background-color: #101010;
+  transition: background-color 0.25s linear;
+}
+
+.app-btn.blu:hover {
+  background-color: #454545;
+}
+
+.app-btn i {
+  width: 20%;
+  text-align: center;
+  font-size: 36px;
+  margin-right: 7px;
+}
+
+.app-btn .big-txt {
+  font-size: 25px;
+  text-transform: capitalize;
+}
+
+/* Media query for screens below 768 pixels */
+@media screen and (max-width: 768px) {
+  .flex-app {
+    flex-direction: column; /* Stack children vertically */
+  }
+
+  .app-btn {
+    width: 90%; /* Adjust the button width to take more space */
+    margin: 7px auto; /* Center the buttons horizontally */
+  }
+  
+  .app-btn i {
+    margin-bottom: 7px; /* Add space below the icon */
+  }
+  
+  .app-btn span {
+    margin-top: 7px; /* Add space above the text */
+  }
+}
+
+
+</style>
+
+<!-- partial:index.partial -->
+<div class="flex-app social-btns">
+  <a class="app-btn blu flex-app vert" href="https://apps.apple.com/app/ai4chat-chat-art-music-video/id6478985890">
+    <i class="fab fa-apple"></i>
+    <span>Available on the <br/> <span class="big-txt">App Store</span></span>
+  </a>
+
+  <a class="app-btn blu flex-app vert" href="https://play.google.com/store/apps/details?id=com.app.ai4chat">
+    <i class="fab fa-google-play"></i>
+    <span>Get it on <br/> <span class="big-txt">Google Play</span></span>
+  </a>
+	
+	
+</div>
+<!-- partial -->
