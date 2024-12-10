@@ -1,0 +1,101 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="relative">
+      <div class="container position-relative">
+        <div class="row position-relative">
+          <!-- Decorative Image Grid -->
+          <div class="col-12 overflow-hidden">
+            <div
+              class="d-flex flex-wrap align-items-center justify-content-evenly image-section"
+              style=""
+            >
+              <div class="image-grid">
+                <div class="image-container">
+                  <img
+                    src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-01.jpg"
+                    alt=""
+                    class="img-fluid rounded shadow"
+                  />
+                </div>
+                <div class="image-container">
+                  <img
+                    src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-02.jpg"
+                    alt=""
+                    class="img-fluid rounded shadow"
+                  />
+                </div>
+                <div class="image-container">
+                  <img
+                    src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-03.jpg"
+                    alt=""
+                    class="img-fluid rounded shadow"
+                  />
+                </div>
+              </div>
+              <div class="image-grid">
+                <div class="image-container">
+                  <img
+                    src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-03.jpg"
+                    alt=""
+                    class="img-fluid rounded shadow"
+                  />
+                </div>
+                <div class="image-container">
+                  <img
+                    src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-04.jpg"
+                    alt=""
+                    class="img-fluid rounded shadow"
+                  />
+                </div>
+                <div class="image-container">
+                  <img
+                    src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-05.jpg"
+                    alt=""
+                    class="img-fluid rounded shadow"
+                  />
+                </div>
+              </div>
+              <div class="image-grid img-grid-3">
+                <div class="image-container">
+                  <img
+                    src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-03.jpg"
+                    alt=""
+                    class="img-fluid rounded shadow"
+                  />
+                </div>
+                <div class="image-container">
+                  <img
+                    src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-06.jpg"
+                    alt=""
+                    class="img-fluid rounded shadow"
+                  />
+                </div>
+                <div class="image-container">
+                  <img
+                    src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-07.jpg"
+                    alt=""
+                    class="img-fluid rounded shadow"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => { const
+      parallaxContainers = document.querySelectorAll(".image-grid"); const speed
+      = [-0.30, 0.34, -0.23]; const handleParallax = () => { const scrollY =
+      window.scrollY; parallaxContainers.forEach((container, index) => {
+      container.style.transform = `translateY(${scrollY * speed[index]}px)`; });
+      }; window.addEventListener("scroll", handleParallax); });
+
+    </script>
+  </body>
+</html>
