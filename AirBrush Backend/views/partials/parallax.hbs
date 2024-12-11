@@ -8,7 +8,7 @@
       <div class="container position-relative">
         <div class="row position-relative">
           <!-- Decorative Image Grid -->
-          <div class="col-12 overflow-hidden">
+          <div class="col-12 overflow-hidden parallax-section">
             <div
               class="d-flex flex-wrap align-items-center justify-content-evenly image-section"
               style=""
@@ -16,21 +16,21 @@
               <div class="image-grid">
                 <div class="image-container">
                   <img
-                    src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-01.jpg"
+                    src="../images/hero-images/1.png"
                     alt=""
                     class="img-fluid rounded shadow"
                   />
                 </div>
                 <div class="image-container">
                   <img
-                    src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-02.jpg"
+                    src="../images/hero-images/2.png"
                     alt=""
                     class="img-fluid rounded shadow"
                   />
                 </div>
                 <div class="image-container">
                   <img
-                    src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-03.jpg"
+                    src="../images/hero-images/3.png"
                     alt=""
                     class="img-fluid rounded shadow"
                   />
@@ -39,21 +39,21 @@
               <div class="image-grid">
                 <div class="image-container">
                   <img
-                    src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-03.jpg"
+                    src="../images/hero-images/4.png"
                     alt=""
                     class="img-fluid rounded shadow"
                   />
                 </div>
                 <div class="image-container">
                   <img
-                    src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-04.jpg"
+                    src="../images/hero-images/5.png"
                     alt=""
                     class="img-fluid rounded shadow"
                   />
                 </div>
                 <div class="image-container">
                   <img
-                    src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-05.jpg"
+                    src="../images/hero-images/6.png"
                     alt=""
                     class="img-fluid rounded shadow"
                   />
@@ -62,21 +62,21 @@
               <div class="image-grid img-grid-3">
                 <div class="image-container">
                   <img
-                    src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-03.jpg"
+                    src="../images/hero-images/7.png"
                     alt=""
                     class="img-fluid rounded shadow"
                   />
                 </div>
                 <div class="image-container">
                   <img
-                    src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-06.jpg"
+                    src="../images/hero-images/8.png"
                     alt=""
                     class="img-fluid rounded shadow"
                   />
                 </div>
                 <div class="image-container">
                   <img
-                    src="https://tailwindui.com/plus/img/ecommerce-images/home-page-03-hero-image-tile-07.jpg"
+                    src="../images/hero-images/9.png"
                     alt=""
                     class="img-fluid rounded shadow"
                   />
@@ -91,7 +91,7 @@
     <script>
       document.addEventListener("DOMContentLoaded", () => { const
       parallaxContainers = document.querySelectorAll(".image-grid"); const speed
-      = [-0.30, 0.34, -0.23]; const handleParallax = () => { const scrollY =
+      = [0.34, -0.13, 0.25]; const handleParallax = () => { const scrollY =
       window.scrollY; parallaxContainers.forEach((container, index) => {
       container.style.transform = `translateY(${scrollY * speed[index]}px)`; });
       }; window.addEventListener("scroll", handleParallax); });
