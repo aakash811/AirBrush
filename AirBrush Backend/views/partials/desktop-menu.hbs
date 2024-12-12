@@ -9,16 +9,16 @@
   .dropdown { position: relative; } .dropdown-content div {; }
 
 </style>
-<header class="header-one header--sticky">
+<header class="header-one">
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
         <div class="header-main-wrapper">
           <a href="/" class="logo">
             <img
-              src="/images/logo/ai2.png"
+              src="../images/logo/airbrush-logo.png"
               alt="logo"
-              style="max-width: 111px"
+              style="max-width: 200px"
             />
           </a>
           <!-- nav -->
@@ -28,7 +28,7 @@
             <nav>
               <ul>
 
-                <li class="dropdown">
+                {{!-- <li class="dropdown">
                   <a class="links-main">Use Cases</a>
                   <ul class="dropdown-content">
                     <div class="hover: bg">
@@ -38,11 +38,16 @@
                     <div class="m-0 p-40"><a href="/gpts">GPTs</a></div>
                     <div class="m-0"><a href="/characters">AI Characters</a></div>
                   </ul>
-                </li>
-                <li><a class="links-main" href="features">Features</a></li>
+                </li> --}}
                 <li><a class="links-main" href="pricing">Pricing</a></li>
-                <li><a class="links-main" href="tutorials">Tutorials</a></li>
-                <li><a class="links-main" href="faq">FAQ</a></li>
+                <li><a class="links-main" href="features">Free Tools</a></li>
+                <li><a class="links-main" href="tutorials">Blog</a></li>
+                <li>
+                  <div>
+                    <img src="../images/svg/product-hunt.svg"/>
+                  </div>
+                </li>
+                {{!-- <li><a class="links-main" href="faq">FAQ</a></li> --}}
 
               </ul>
             </nav>
