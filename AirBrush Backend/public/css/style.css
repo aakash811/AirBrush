@@ -648,7 +648,7 @@ ol ul {
 }
 
 .rts-section-gap {
-  padding: 130px 0;
+  padding: 130px 150px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .rts-section-gap {
@@ -657,7 +657,7 @@ ol ul {
 }
 @media only screen and (max-width: 767px) {
   .rts-section-gap {
-    padding: 60px 0;
+    padding: 60px 30px;
   }
 }
 
@@ -17263,13 +17263,13 @@ p.brand-title {
   width: 100%;
 }
 
-.bg-tools {
+/* .bg-tools {
   background: radial-gradient(
     21.09% 21.09% at 50% 58.35%,
     #151f39 0%,
     #0e1424 100%
   );
-}
+} */
 .bg-tools .title-conter-area .title {
   color: #fff;
 }
@@ -19922,7 +19922,7 @@ p.brand-title {
 }
 
 .rts-bread-crumb-area {
-  background-image: url(../images/banner/breadcrumb/01.jpg);
+  /* background-image: url(../images/banner/breadcrumb/01.jpg); */
   padding: 180px 0 100px 0;
 }
 
@@ -22640,5 +22640,97 @@ body.dark-version .mega-menu-item li a img {
 @media (max-width: 500px) {
   .rts-btn.btn-primary.btn-free {
     display: none;
+  }
+}
+.feature-card {
+  background-color: #2a007f;
+  padding: 40px;
+  text-align: center;
+  align-content: center;
+}
+.free-tools-col {
+  gap: 5rem;
+}
+.free-tools-row {
+  gap: 2rem;
+}
+.free-tool-img-container {
+  min-width: 50%;
+  background-color: #f86635;
+  border-radius: 2rem;
+  align-content: center;
+  padding: 5%;
+}
+.feature-content {
+  font-size: 24px;
+  line-height: 44px;
+}
+.free-tool-img {
+  min-width: 100%;
+}
+
+.feature-title {
+  font-size: 44px;
+}
+
+@media (max-width: 1200px) {
+  .feature-content {
+    font-size: 18px;
+  }
+  .free-tool-img-container {
+    min-width: 40%;
+  }
+  .feature-title {
+    font-size: 36px;
+  }
+}
+
+.foot-sec {
+  margin-top: 50px;
+  text-align: center;
+  padding-block: 20px;
+  border-radius: 1rem;
+  background-color: #f86635;
+}
+
+.foot-sec .foot-content {
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.foot-sec:hover {
+  background-color: #8bc34a;
+}
+
+@media (max-width: 992px) {
+  .feature-content {
+    font-size: 18px;
+    line-height: 32px;
+  }
+  .foot-sec .foot-content {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .free-tools-row {
+    display: flex;
+    flex-direction: column;
+  }
+  .free-tool-img-container {
+    background-color: #f86635;
+    border-radius: 2rem;
+    align-content: center;
+    padding: 5%;
+  }
+  .feature-title {
+    font-size: 20px;
+  }
+  .feature-content {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .foot-sec .foot-content {
+    font-size: 14px;
   }
 }
