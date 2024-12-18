@@ -405,13 +405,13 @@
     <title>Pricing</title>
     <style>
       /* Custom CSS to mimic the original design */ .pricing-section { padding:
-      24px 6%; position: relative; z-index: 1; }
-      .pricing-section .background-shape,.background-wrap { position: absolute;
-      top: -10%; left: 0; right: 0; overflow: hidden; padding-left: 9rem;
-      padding-right: 9rem; filter: blur(20rem); z-index: -1; }.background-shape{
-      clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7%
-      2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5%
-      76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%);
+      24px 6%; position: relative; z-index: 1; } .pricing-section
+      .background-shape,.background-wrap { position: absolute; top: -10%; left:
+      0; right: 0; overflow: hidden; padding-left: 9rem; padding-right: 9rem;
+      filter: blur(20rem); z-index: -1; }.background-shape{ clip-path:
+      polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5%
+      32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%,
+      0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%);
       background: linear-gradient(to top right, #d0c2c8, #7c75e0); opacity: 1;
       height: 100%; } .background-wrap { height: 70%; } .pricing-section h2 {
       font-weight: 600; } .pricing-section p.subtitle { font-size: 2.5rem;
@@ -426,8 +426,7 @@
       white; } .btn { background-color: #fd562a; border-color: #fd562a; color:
       white; font-size: 15px; width: 100%; margin-block: 20px; padding-block:
       10px; text-align: center; display: inline-block; border-radius: 1rem; }
-      .btn:hover { background-color: #fff; border-color: #fff; color:
-      #fd562a; }
+      .btn:hover { background-color: #fff; border-color: #fff; color: #fd562a; }
 
     </style>
   </head>
@@ -447,10 +446,7 @@
 
       <div class="row mt--40 justify-content-center price-container">
         <!-- Free Plan -->
-        <div
-          class="col-md-4 price-crd"
-          style="scale: 95%; margin-left: 20px;"
-        >
+        <div class="col-md-4 price-crd" style="scale: 95%; margin-left: 20px;">
           <div class="pricing-card" style="padding-inline: 40px;">
             <h5
               style="color: #3996fb; padding-block: 20px; font-size: 20px"
@@ -487,7 +483,8 @@
                 ></i>Public Gallery</li>
             </ul>
             <a
-              href="#"
+              target="_blank"
+              href="https://app.airbrush.ai/signup"
               class="btn btn-outline-primary"
               style="font-size: 15px; width: 100%; margin-block: 20px; padding-block: 10px"
             >Get started today</a>
@@ -496,10 +493,7 @@
 
         <!-- Premium Plan -->
         <div class="col-md-4 price-crd">
-          <div
-            class="pricing-card featured"
-            style="padding-inline: 40px;"
-          >
+          <div class="pricing-card featured" style="padding-inline: 40px;">
             <h5
               style="color: #3996fb; padding-block: 20px; font-size: 20px"
             >Premium Plan</h5>
@@ -534,7 +528,13 @@
                   style="font-size: 20px; color:#3996fb"
                 ></i>Public Gallery</li>
             </ul>
-            <a href="#" class="btn">Get started today</a>
+            <a
+              target="_blank"
+              href="https://app.airbrush.ai/signup"
+              class="btn"
+            >
+              Get started today
+            </a>
 
           </div>
         </div>

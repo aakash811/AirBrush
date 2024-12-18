@@ -256,16 +256,16 @@
                     </h2>
                 </div>
             </div>
-            {{#each relatedArticles}}
 								    
-            <div class="row g-5 mt--10">
-                <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+            <div class="g-5 mt--10">
+                <div style="display: flex; column-gap: 5rem;">
                     <!-- single blog area start -->
-                    <div class="single-blog-area-wrapper">
-                        <a href="/blog/{{this.url}}" class="thumbnail">
-                            <img src="{{this.imageUrl}}" alt="{{this.title}}">
-                        </a>
-                        <div class="inner-content">
+                    {{#each relatedArticles}}
+                    <div class="related-single-blog-area-wrapper">
+                            <a href="/blog/{{this.url}}" class="thumbnail">
+                                <img src="{{this.imageUrl}}" alt="{{this.title}}">
+                            </a>
+                        {{!-- <div class="inner-content">
                             <div class="head">
                                 <span class="tag">Blog Content</span>
                                 <span class="time">{{this.timeToRead}} minute read</span>
@@ -285,11 +285,11 @@
                                     <a href="/blog/{{this.url}}">Read More <i class="fa-solid fa-arrow-right"></i></a>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
+                    {{/each}}
                     <!-- single blog area end -->
                 </div>
-                {{/each}}
             </div>
         </div>
     </div>

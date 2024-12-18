@@ -39,7 +39,7 @@
     {{> desktop-menu}}
 
 <!-- rts breadcrumb area start-->
-    <div class="rts-bread-crumb-area bg_image">
+    {{!-- <div class="rts-bread-crumb-area bg_image">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -55,7 +55,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- rts breadcrumb area end -->
 <style>
 .flex-app {
@@ -136,47 +136,61 @@
 
 
 <!-- rts blgo area start -->
-    <div class="rts-blog-area rts-section-gap bg-smooth">
+    <div class="rts-blog-area-rts-section-gap bg-smooth-1">
         <div class="container">
-            <div class="row g-5">
-            {{#each articles}}
-                <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-                    <!-- single blog area start -->
-                    <div class="single-blog-area-wrapper">
-                        <a href="/blog/{{this.url}}" class="thumbnail">
-                            <img src="{{this.imageUrl}}" alt="{{this.title}}">
-                        </a>
-                        <div class="inner-content">
-                            <div class="head">
-                                <span class="tag">Blog Content</span>
-                                <span class="time">{{this.timeToRead}} minute read</span>
-                            </div>
-                            <div class="body">
-                                <a href="/blog/{{this.url}}">
-                                    <h5 class="title">{{this.title}}</h5>
-                                </a>
-                                <div class="author-area">
-                                    <div class="author">
-                                        <img src="/images/blog/04.png" alt="Samuel - AI4Chat">
-                                        <div class="info">
-                                            <p>Samuel</p>
-                                            <span>Author</span>
-                                        </div>
-                                    </div>
-                                    <a href="/blog/{{this.url}}">Read More <i class="fa-solid fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- single blog area end -->
-                </div>
-                {{/each}}
-            </div>
+              <div id="blog-container">
+                <!-- Blog posts will be dynamically displayed here -->
+              </div>
+
+              <div id="loading-message" style="text-align: center; display: none; margin-top: 1rem; color:#454545">
+                 Loading more posts...
+              </div>
         </div>
     </div>
     <!-- rts blgo area end -->
 
 
+<div id="all-posts" style="display: none;">
+{{#each articles}}
+    <div class="" style="margin-top: 5rem;">
+        <!-- single blog area start -->
+        <div class="single-blog-area-wrapper">
+                {{#if this.imageUrl}}
+                  <a href="/blog/{{this.url}}" class="thumbnail">
+                    <img src="{{this.imageUrl}}" alt="{{this.title}}">
+                  </a>
+                {{/if}}
+            <div class="inner-content">
+                {{!-- <div class="head">
+                    <span class="tag">Blog Content</span>
+                    <span class="time">{{this.timeToRead}} minute read</span>
+                </div> --}}
+                <div class="body">
+                    <a href="/blog/{{this.url}}">
+                        <h5 class="title">{{this.title}}</h5>
+                    </a>
+                    <div>
+                      <div style=" color:#454545; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
+                          {{{this.summary}}}
+                      </div>
+                    </div>
+                    <div class="author-area">
+                        {{!-- <div class="author">
+                            <img src="/images/blog/04.png" alt="Samuel - AI4Chat">
+                            <div class="info">
+                                <p>Samuel</p>
+                                <span>Author</span>
+                            </div>
+                        </div> --}}
+                        <a href="/blog/{{this.url}}">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- single blog area end -->
+    </div>
+    {{/each}}
+</div>
 
 
 
@@ -192,9 +206,9 @@
 		
 		
 		
-		{{> apps}}
+		{{!-- {{> apps}} --}}
 
-    {{> cta}}
+    {{!-- {{> cta}} --}}
 
     {{> footer}}
 
@@ -221,6 +235,54 @@
     <script src="/js/plugins/swiper.js" defer></script>
     <script src="/js/plugins/contact.form.js" defer></script>
     <script src="/js/main.js" defer></script>
+
+    <script>
+      const blogContainer = document.getElementById("blog-container");
+      const allPostsContainer = document.getElementById("all-posts");
+      const allPosts = Array.from(allPostsContainer.children); 
+      const postsPerPage = 20; 
+      let currentPage = 1; 
+      let isLoading = false; 
+
+      const loadingMessage = document.getElementById("loading-message");
+
+      function renderPosts(page) {
+        const startIndex = (page - 1) * postsPerPage;
+        const endIndex = page * postsPerPage;
+
+        const postsToRender = allPosts.slice(startIndex, endIndex);
+        postsToRender.forEach((post) => {
+          blogContainer.appendChild(post); 
+        });
+
+        if (endIndex >= allPosts.length) {
+          window.removeEventListener("scroll", handleScroll);
+        }
+      }
+
+      function handleScroll() {
+        if (
+          window.innerHeight + window.scrollY >= document.body.offsetHeight - 200 &&
+          !isLoading
+        ) {
+          isLoading = true; 
+
+          loadingMessage.style.display = "block";
+
+          setTimeout(() => {
+            currentPage++;
+            renderPosts(currentPage);
+
+            loadingMessage.style.display = "none";
+            isLoading = false;
+          }, 1500); 
+        }
+      }
+
+      renderPosts(currentPage);
+
+      window.addEventListener("scroll", handleScroll);
+    </script>
 
 </body>
 
