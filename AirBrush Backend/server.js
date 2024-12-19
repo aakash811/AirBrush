@@ -120,7 +120,7 @@ MongoClient.connect(connectionString, (err, client) => {
       const relatedArticles = await blogCollection
         .aggregate([
           { $match: { url: { $ne: req.params.url } } },
-          { $sample: { size: 3 } },
+          { $sample: { size: 4 } },
         ])
         .toArray();
       relatedArticles.forEach((relatedArticle) => {
@@ -374,8 +374,8 @@ MongoClient.connect(connectionString, (err, client) => {
     res.render("faq");
   });
 
-  app.get("/features", (req, res) => {
-    res.render("features");
+  app.get("/free-tool", (req, res) => {
+    res.render("free-tool");
   });
 
   app.get("/privacy", (req, res) => {

@@ -696,6 +696,21 @@ ol ul {
   }
 }
 
+.rts-blog-section-gapTop {
+  margin-top: 175px;
+  padding: 20px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .rts-blog-section-gapTop {
+    padding-top: 70px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .rts-blog-section-gapTop {
+    padding-top: 60px;
+  }
+}
+
 .pl--0 {
   padding-left: 0 !important;
 }
@@ -18810,7 +18825,7 @@ p.brand-title {
   color: var(--color-primary-2);
 }
 
-.related-single-blog-area-wrapper{
+.related-single-blog-area-wrapper {
   display: flex;
   flex-direction: column;
   align-content: space-evenly;
@@ -18818,7 +18833,7 @@ p.brand-title {
 }
 
 .single-blog-area-wrapper {
-  background: #fff;
+  /* background: #fff; */
   display: flex;
   align-content: space-evenly;
   border-radius: 10px;
@@ -20985,7 +21000,7 @@ body.dark-version .bg-smooth {
 }
 
 body.dark-version .bg-smooth-1 {
-  background: #fff;
+  /* background: #fff; */
 }
 
 body.dark-version .bg-smooth-2 {
@@ -21179,14 +21194,14 @@ body.dark-version .rts-footer-area.footer-two .number {
 body.dark-version .single-blog-area-wrapper .inner-content .head span.tag {
   color: #fff;
 }
-body.dark-version
+/* body.dark-version
   .single-blog-area-wrapper
   .inner-content
   .body
   .author-area
   a {
   color: #000;
-}
+} */
 
 body.dark-version
   .single-blog-area-wrapper
@@ -21204,7 +21219,16 @@ body.dark-version .single-blog-area-wrapper .inner-content .head span.tag {
   color: black; */
 }
 body.dark-version .single-blog-area-wrapper .inner-content .body a .title {
-  color: black;
+  color: #ffffff;
+}
+
+body.dark-version
+  .single-blog-area-wrapper
+  .inner-content
+  .body
+  a
+  .title:hover {
+  color: var(--color-primary);
 }
 
 body.dark-version
@@ -21256,7 +21280,7 @@ body.dark-version .single-team-area .star {
 }
 body.dark-version .single-blog-area-wrapper .inner-content {
   /* background: #0e1424; */
-  background-color: #fff;
+  /* background-color: #fff; */
 }
 body.dark-version .single-pricing-single-two {
   background: #0e1424;
@@ -22827,4 +22851,19 @@ body.dark-version .mega-menu-item li a img {
 
 .single-blog-area-wrapper.no-image .thumbnail {
   display: none;
+}
+.post-content h2,
+.post-content h2 strong,
+.post-content h3,
+.post-content h3 strong,
+.post-content h2 span,
+.post-content h3 span,
+.post-content h3 b,
+.post-content h3 a,
+.post-content h2 a {
+  color: white !important;
+}
+
+.post-content a {
+  color: var(--color-primary) !important;
 }
