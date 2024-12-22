@@ -378,16 +378,20 @@ MongoClient.connect(connectionString, (err, client) => {
     res.render("free-tool");
   });
 
-  app.get("/privacy", (req, res) => {
-    res.render("privacy");
+  app.get("/privacy-policy", (req, res) => {
+    res.render("privacy-policy");
   });
 
-  app.get("/terms", (req, res) => {
-    res.render("terms");
+  app.get("/terms-of-service", (req, res) => {
+    res.render("terms-of-service");
   });
 
   app.get("/tutorials", (req, res) => {
     res.render("tutorials");
+  });
+
+  app.get("/lifetime-deal", (req, res) => {
+    res.render("lifetime-deal");
   });
 
   app.get("/use-cases", async (req, res) => {
