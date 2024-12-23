@@ -9097,9 +9097,7 @@ a {
   outline: none;
 }
 
-a:hover,
-a:focus,
-a:active {
+a:hover {
   text-decoration: none;
   outline: none;
   color: var(--color-primary);
@@ -22942,12 +22940,13 @@ body.dark-version .mega-menu-item li a img {
 @media (max-width: 768px) {
   .deal-flex {
     flex-direction: column;
-    align-items: center; 
-    gap: 2rem; 
+    align-items: center;
+    gap: 2rem;
   }
 
-  .deal-para, .deal-img {
-    width: 90%; 
+  .deal-para,
+  .deal-img {
+    width: 90%;
   }
 
   .deal-img img {
@@ -22955,8 +22954,8 @@ body.dark-version .mega-menu-item li a img {
   }
 }
 
-@media (max-width: 992px){
-  .deal-link{
+@media (max-width: 992px) {
+  .deal-link {
     font-size: 12px;
   }
 }
@@ -23031,7 +23030,9 @@ body.dark-version .mega-menu-item li a img {
 }
 
 .deal-foot-sec {
+  min-width: 100%;
   margin-top: 40px;
+  display: block;
   border-radius: 1rem;
   padding-block: 10px;
   background-color: var(--color-primary);
@@ -23040,23 +23041,168 @@ body.dark-version .mega-menu-item li a img {
   letter-spacing: 1px;
   font-weight: 800;
 }
-.deal-foot-sec i{
+
+deal-foot-sec:focus {
+  background-color: black;
+}
+
+.deal-foot-sec i {
   margin-right: 10px;
 }
 
-.price-sec{
-  display: flex;
-  gap: 1rem;
+.deal-foot-sec-1 {
+  min-width: 100%;
+  margin-top: 40px;
+  display: block;
+  border-radius: 1rem;
+  padding-block: 10px;
+  background-color: #8bc34a;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 1px;
+  font-weight: 800;
 }
 
-.deal-foot-sec:hover{
+.deal-foot-sec-1:hover {
   background-color: black;
   color: #fff;
 }
 
-@media (max-width: 992px){
-  .price-sec{
+.price-sec {
+  display: flex;
+  gap: 1rem;
+}
+
+.deal-foot-sec:hover {
+  background-color: black;
+  color: #fff;
+}
+
+@media (max-width: 992px) {
+  .price-sec {
     flex-direction: column;
     padding-inline: 20px;
+  }
+}
+
+.generator-flex {
+  margin-top: 10%;
+  gap: 2rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+@media (max-width: 768px) {
+  .generator-flex {
+    display: flex;
+    flex-direction: column;
+  }
+  .generator-flex-para,
+  .generator-flex-img {
+    min-width: 100%;
+    width: 100%;
+  }
+}
+
+.generator-flex-para {
+  width: 65%;
+  align-items: center;
+  height: fit-content;
+  text-align: left;
+  background-color: #c9c9c9;
+  padding-inline: 20px;
+  padding-block: 40px;
+}
+
+.generator-flex-para h5,
+.generator-flex p {
+  color: #212934 !important;
+}
+
+.generator-flex-para h5:hover {
+  color: #65bc7b !important;
+}
+
+.generator-flex-img {
+  width: 35%;
+}
+.generator-flex-img img {
+  width: 100%;
+  border: 7px solid #ef0202;
+}
+/* Style for the modal background */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fff;
+  padding-block: 20px;
+  border-radius: 8px;
+  width: 60%;
+  max-width: 90%;
+  text-align: left;
+}
+
+.modal-content h3 {
+  color: #060606;
+  padding-inline: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #a0a0a0;
+}
+
+.modal-content li {
+  color: #808080;
+  padding-inline: 20px;
+}
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+/* Utility class to show the modal */
+.hidden {
+  display: none;
+}
+
+.show {
+  display: flex;
+}
+.modal-btn {
+  font-size: 16px;
+  margin-left: 87%;
+  text-align: center;
+  width: 100px;
+  background-color: #f86635;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+.modal-btn:hover {
+  background-color: #000545;
+}
+
+@media (max-width: 1200px) {
+  .modal-btn {
+    margin-left: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .modal-btn {
+    margin-left: 70%;
   }
 }

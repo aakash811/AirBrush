@@ -394,6 +394,34 @@ MongoClient.connect(connectionString, (err, client) => {
     res.render("lifetime-deal");
   });
 
+  app.get("/stable-diffusion-image-generator", (req, res) => {
+    res.render("stable-diffusion-image-generator");
+  });
+
+  app.get("/dall-e-2-image-generator", (req, res) => {
+    res.render("dall-e-2-image-generator");
+  });
+
+  app.get("/nft-art-creator", (req, res) => {
+    res.render("nft-art-creator");
+  });
+
+  app.get("/photo-to-painting-online", (req, res) => {
+    res.render("photo-to-painting-online");
+  });
+
+  app.get("/ai-art-generator", (req, res) => {
+    res.render("ai-art-generator");
+  });
+
+  app.get("/ai-face-generator", (req, res) => {
+    res.render("ai-face-generator");
+  });
+
+  app.get("/ai-photo-upscaler", (req, res) => {
+    res.render("ai-photo-upscaler");
+  });
+
   app.get("/use-cases", async (req, res) => {
     try {
       const pages = await rootCollection.find({}).toArray();
