@@ -22712,24 +22712,25 @@ body.dark-version .mega-menu-item li a img {
   background-color: #2a007f;
   padding: 40px;
   text-align: center;
+  min-width: 50%;
   align-content: center;
 }
 .free-tools-col {
   gap: 5rem;
 }
 .free-tools-row {
-  gap: 2rem;
+  gap: 5rem;
 }
 .free-tool-img-container {
-  min-width: 50%;
+  min-width: 40%;
   background-color: #f86635;
   border-radius: 2rem;
   align-content: center;
   padding: 5%;
 }
 .feature-content {
-  font-size: 24px;
-  line-height: 44px;
+  font-size: 18px;
+  line-height: 28px;
 }
 .free-tool-img {
   min-width: 100%;
@@ -22751,10 +22752,25 @@ body.dark-version .mega-menu-item li a img {
   }
 }
 
+.feature-btn {
+  background-color: var(--color-primary);
+  color: white;
+  max-width: fit-content;
+  border-radius: 5px;
+  margin-top: 30px;
+  padding: 10px;
+  padding-inline: 20px;
+}
+
+.feature-btn:hover {
+  background-color: white;
+  color: var(--color-primary);
+}
+
 .foot-sec {
   margin-top: 50px;
   text-align: center;
-  padding-block: 20px;
+  padding-block: 15px;
   border-radius: 1rem;
   background-color: #f86635;
 }
@@ -23133,7 +23149,6 @@ deal-foot-sec:focus {
 /* Style for the modal background */
 .modal {
   display: none; /* Hidden by default */
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;

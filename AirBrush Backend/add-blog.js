@@ -11,85 +11,139 @@ async function addBlogPost() {
     console.log("Connected to the database");
 
     const database = client.db("ai4chat");
-    const blogCollection = database.collection("blog-collection");
+    const generatorCollection = database.collection("generator-collection");
 
-    const newBlog = [
-      {
-        url: "the-potential-of-best-ai-art-for-commercial-use",
-        title:
-          "Unlock the potential of Best AI art for commercial use with powerful AI generators",
-        content: `<h1 class="entry-title fusion-post-title fusion-responsive-typography-calculated" data-fontsize="32" style="--fontSize: 32; line-height: 1.3;" data-lineheight="41.6px">Unlock the potential of Best AI art for commercial use with powerful AI generators</h1>
-     <div class="post-content">
-				<div class="fusion-fullwidth fullwidth-box fusion-builder-row-2 fusion-flex-container nonhundred-percent-fullwidth non-hundred-percent-height-scrolling" style="--awb-border-radius-top-left:0px;--awb-border-radius-top-right:0px;--awb-border-radius-bottom-right:0px;--awb-border-radius-bottom-left:0px;--awb-flex-wrap:wrap;"><div class="fusion-builder-row fusion-row fusion-flex-align-items-flex-start fusion-flex-content-wrap" style="max-width:1248px;margin-left: calc(-4% / 2 );margin-right: calc(-4% / 2 );"><div class="fusion-layout-column fusion_builder_column fusion-builder-column-6 fusion_builder_column_1_1 1_1 fusion-flex-column" style="--awb-bg-size:cover;--awb-width-large:100%;--awb-margin-top-large:0px;--awb-spacing-right-large:1.92%;--awb-margin-bottom-large:0px;--awb-spacing-left-large:1.92%;--awb-width-medium:100%;--awb-spacing-right-medium:1.92%;--awb-spacing-left-medium:1.92%;--awb-width-small:100%;--awb-spacing-right-small:1.92%;--awb-spacing-left-small:1.92%;"><div class="fusion-column-wrapper fusion-flex-justify-content-flex-start fusion-content-layout-column"><div class="fusion-text fusion-text-1"><p>Today, we’re diving into the fascinating world of AI art for commercial use and how it’s shaking up the business scene. Buckle up as we explore the potential applications, money-making schemes, and the juicy role AI art plays in gaming, entertainment, and digital media.</p>
-<p><img decoding="async" fetchpriority="high" class="alignnone size-full wp-image-20771" src="https://www.airbrush.ai/wp-content/uploads/2024/05/Blue-Brown-3D-Illustrated-Social-Media-Marketing-Blog-Banner.png" alt="AI art for commercial use" width="2240" height="1260" srcset="https://www.airbrush.ai/wp-content/uploads/2024/05/Blue-Brown-3D-Illustrated-Social-Media-Marketing-Blog-Banner-200x113.png 200w, https://www.airbrush.ai/wp-content/uploads/2024/05/Blue-Brown-3D-Illustrated-Social-Media-Marketing-Blog-Banner-300x169.png 300w, https://www.airbrush.ai/wp-content/uploads/2024/05/Blue-Brown-3D-Illustrated-Social-Media-Marketing-Blog-Banner-400x225.png 400w, https://www.airbrush.ai/wp-content/uploads/2024/05/Blue-Brown-3D-Illustrated-Social-Media-Marketing-Blog-Banner-600x338.png 600w, https://www.airbrush.ai/wp-content/uploads/2024/05/Blue-Brown-3D-Illustrated-Social-Media-Marketing-Blog-Banner-768x432.png 768w, https://www.airbrush.ai/wp-content/uploads/2024/05/Blue-Brown-3D-Illustrated-Social-Media-Marketing-Blog-Banner-800x450.png 800w, https://www.airbrush.ai/wp-content/uploads/2024/05/Blue-Brown-3D-Illustrated-Social-Media-Marketing-Blog-Banner-1024x576.png 1024w, https://www.airbrush.ai/wp-content/uploads/2024/05/Blue-Brown-3D-Illustrated-Social-Media-Marketing-Blog-Banner-1200x675.png 1200w, https://www.airbrush.ai/wp-content/uploads/2024/05/Blue-Brown-3D-Illustrated-Social-Media-Marketing-Blog-Banner-1536x864.png 1536w, https://www.airbrush.ai/wp-content/uploads/2024/05/Blue-Brown-3D-Illustrated-Social-Media-Marketing-Blog-Banner.png 2240w" sizes="(max-width: 2240px) 100vw, 2240px"></p>
-<h2 data-fontsize="40" data-lineheight="48px" class="fusion-responsive-typography-calculated" style="--fontSize: 40; line-height: 1.2; color: rgb(0, 0, 0);"><span id="What_are_the_potential_commercial_applications_of_AI_art_generators">What are the potential commercial applications of AI art generators?</span></h2>
-<p>Imagine you’re scrolling through your social media, and suddenly, you see this amazing ad. It’s showing off a product with stunning visuals. Believe it or not, AI art played a role in creating that masterpiece. Yep, advertising is just one place where AI-generated art shines.</p>
-<p>But hold on, there’s more! Imagine you’re having your morning chai, checking out furniture websites, and you come across a chair that’s not only super comfy but also looks like it’s from a sci-fi movie. AI art has shared its secrets with product designers, making everyday objects stand out with creativity.</p>
-<p>James Heartquist, from <a href="https://www.webuyhousesarizona.net/" target="_blank" rel="noopener">We Buy Houses Arizona</a>, believes that the potential applications of AI art generators are vast and diverse. According to him, <em><strong>“AI art generators hold significant potential for commercial applications across various industries. In advertising, they can be used to quickly generate unique and eye-catching visuals for campaigns, reducing the time and cost associated with traditional content creation. Product design can also benefit from AI art generators by creating numerous design variations, enabling companies to explore more creative options without the need for extensive human resources. Furthermore, these generators can assist in developing branding materials, such as logos and packaging designs, providing businesses with a cost-effective way to establish a strong visual identity.”</strong></em></p>
-<p>On the other hand, Nathan Chen, Marketing Manager at <a href="https://silverstonetec.com/" target="_blank" rel="noopener">Silverstone Technologies</a>, emphasizes the significance of AI-generated art in product design. <em><strong>“AI-generated art holds significant potential across various industries. One prominent area is advertising and marketing. AI can create unique visuals tailored to specific audiences, revolutionizing advertising campaigns. By customizing content at scale, businesses can improve engagement and brand recognition, ultimately enhancing marketing effectiveness.”</strong></em></p>
-<p><em><strong>“In product design, AI-generated art offers innovative solutions. Businesses can use AI to design logos, packaging, and brand visuals swiftly and creatively. This technology accelerates product development and enhances branding strategies by providing a wealth of design options efficiently.”</strong></em></p>
-<h2 data-fontsize="40" data-lineheight="48px" class="fusion-responsive-typography-calculated" style="--fontSize: 40; line-height: 1.2; color: rgb(0, 0, 0);"><span id="How_could_businesses_monetize_or_build_business_models_around_AI-generated_art">How could businesses monetize or build business models around AI-generated art?</span></h2>
-<p>Now, let’s talk moolah! Businesses are like treasure hunters, always on the lookout for shiny new ways to rake in the dough. AI-generated art is like a golden ticket in their hands. From selling art pieces to licensing designs, the possibilities are endless.</p>
-<p>According to James Heartquist, <em><strong>“Businesses can monetize AI-generated art through several avenues. One approach is by selling the artwork directly on online marketplaces like Etsy, where creators can set their own prices and reach a global audience. Another method is by licensing the artwork to other businesses for use in their marketing materials, websites, or physical products. Additionally, businesses can offer custom AI art commissions, catering to clients seeking personalized artwork for private or commercial use. Collaborations with brands and influencers to create exclusive content can also be a lucrative model, as it combines the novelty of AI-generated art with the marketing power of well-known personalities.”</strong></em></p>
-<p>Nathan Chen suggests <em><strong>“Monetizing AI-generated art presents exciting opportunities for businesses. Art can be sold digitally or physically, and designs can be licensed for merchandise or commercial use. Subscription models and personalized AI art services also offer viable revenue streams, catering to diverse market demands.”</strong></em></p>
-<h2 data-fontsize="40" data-lineheight="48px" class="fusion-responsive-typography-calculated" style="--fontSize: 40; line-height: 1.2; color: rgb(0, 0, 0);"><span id="What_role_might_AI_art_play_in_industries_like_gaming_entertainment_or_digital_media">What role might AI art play in industries like gaming, entertainment, or digital media?</span></h2>
-<p>Let’s not forget about entertainment and digital media. From mind-blowing special effects in movies to stunning visuals in music videos, AI art sprinkles its magic everywhere. It’s like having Picasso and Spielberg team up to create a visual feast for our eyes.</p>
-<p>James Heartquist envisions AI art revolutionizing industries like gaming, entertainment, and digital media by providing endless possibilities for creativity and innovation. <em><strong>“In the gaming, entertainment, and digital media industries, AI art can play a transformative role. In gaming, AI-generated art can be used to create textures, environments, and character designs, speeding up the development process and allowing for more dynamic and varied game worlds. In entertainment, AI art can contribute to special effects, set designs, and even inspire new storytelling elements. Digital media can leverage AI art to produce unique illustrations for articles, enhance user interface designs, and create engaging social media content. As these industries continue to evolve, AI art is likely to become an integral part of the creative process, offering endless possibilities for innovation and customization.”</strong></em></p>
-<p>On the other hand, Nathan Chen highlights the potential of AI-generated art in digital media platforms such as social media and content creation platforms. <em><strong>“The role of AI-generated art extends across industries like gaming, entertainment, and digital media. In gaming, AI art streamlines development by generating characters, environments, and assets, enriching procedural generation and enhancing gaming experiences. In entertainment, AI-generated visuals contribute to film and animation production, creating backgrounds, effects, and concept art efficiently. In digital media, AI art enhances content creation for websites, social media, and videos, elevating engagement and aesthetics.”</strong></em></p>
-<h2 data-fontsize="40" data-lineheight="48px" class="fusion-responsive-typography-calculated" style="--fontSize: 40; line-height: 1.2; color: rgb(0, 0, 0);"><span id="AI_Art_and_AI_Image_Generators_on_the_Rise">AI Art and AI Image Generators on the Rise</span></h2>
-<p>With the rise of AI art, commercial creativity is getting a boost like never before. AI models, also known as generative AI, and stable diffusion are the game-changers here. These image generators can create stunning artworks, just by a simple prompt. So, if you need eye-catching visuals for commercial purposes, AI-generated images are your go-to solution.</p>
-<p>Imagine You have a project deadline looming, and you need some fresh artwork to spice things up. Instead of searching endlessly or hiring an artist, you can rely on AI tools like Dalle and Midjourney to generate images in no time. These AI models take a text prompt, work their magic, and be done! You’ve got yourself a unique piece of art ready to use.</p>
-<p>As AI art steadily finds its way into commercial spaces, it’s pretty amazing to see how artificial intelligence can whip up creative stuff, making everything smoother and faster. Now, with AI doing the heavy lifting in generating images, commercial creativity is taking a leap forward, becoming more efficient and innovative than ever.</p>
-<h2 data-fontsize="40" data-lineheight="48px" class="fusion-responsive-typography-calculated" style="--fontSize: 40; line-height: 1.2; color: rgb(0, 0, 0);"><span id="How_You_Can_Use_AI_Art_To_Enhance_Your_Brand">How You Can Use AI Art To Enhance Your Brand</span></h2>
-<p>So, let’s talk about how AI art can totally boost your brand. Imagine you’ve got this amazing brand, but you need something extra to make it pop, right? Well, that’s where AI art comes in. With the best AI image generators out there, you can create stunning images that scream your brand’s vibe. And guess what? You don’t even need to be a pro designer because these generators do all the hard work for you. It’s like having your own free AI image creator right at your fingertips!</p>
-<p>Think of having AI generated art that perfectly captures the essence of your brand. It’s like magic, really. These AI images can be used on your website, social media, or even in your marketing materials. And the best part? They’re available for commercial use, so you can use them however you want without worrying about any pesky copyright issues.</p>
-<p>So, why not take advantage of the power of AI image generation to take your brand to the next level? With the best AI art generators out there, creating eye-catching visuals has never been easier. Trust me, once you start using AI-generated images, you’ll wonder how you ever lived without them!</p>
-<h2 data-fontsize="40" data-lineheight="48px" class="fusion-responsive-typography-calculated" style="--fontSize: 40; line-height: 1.2; color: rgb(0, 0, 0);"><span id="AI-Generated_Images_for_Faster_Content_Creation">AI-Generated Images for Faster Content Creation</span></h2>
-<p>Alright, let’s dive deeper into how AI art can really give your brand a boost. With generative AI, you can churn out loads of AI-generated content that’s tailor-made for your brand. Check this out:</p>
-<p>Using generative AI, you can create art that speaks volumes about your brand’s personality and values. Imagine having a library of unique images that perfectly represent what your brand stands for. It’s like having your own personal artist, but without the hefty price tag.</p>
-<ul><li>With AI-generated content, you can maintain a consistent brand image across all your platforms. No more worrying about mismatched visuals – these AI systems ensure that every image fits seamlessly into your brand’s aesthetic.</li>
-<li>And the best part? You don’t need to be an expert designer to create stunning visuals. With the best free AI art generator, you can whip up professional-looking images in no time. It’s like having a magic wand that instantly transforms your ideas into beautiful artwork.</li>
-</ul><h2 data-fontsize="40" data-lineheight="48px" class="fusion-responsive-typography-calculated" style="--fontSize: 40; line-height: 1.2; color: rgb(0, 0, 0);"><span id="Stretch_Your_Marketing_Budget_with_Generative_AI">Stretch Your Marketing Budget with Generative AI</span></h2>
-<p>If you’re looking to get more bang for your buck in marketing, AI art is your go-to solution. With AI image generators of 2024, you can create stunning visuals that’ll make your brand stand out without burning a hole in your pocket. These image generators are the 5 best tools out there, offering a new AI twist to generate cost-effective solutions. They’re simple to use and offer a wide range of options to create art for commercial purposes.</p>
-<p>One such tool is the NightCafe Creator, known for its ability to create images that captivate audiences. These AI artwork generators can be used to train your marketing materials, ensuring they resonate with your target audience. Plus, they’re free AI image generators for business, so you can stretch your marketing budget even further. With AI to generate your new images, the possibilities are endless. So why not make the most of this cost-effective solution and give your marketing a boost? With AI, the sky’s the limit!</p>
-<h2 data-fontsize="40" data-lineheight="48px" class="fusion-responsive-typography-calculated" style="--fontSize: 40; line-height: 1.2; color: rgb(0, 0, 0);"><span id="Different_Types_of_AI_Art_for_Commercial_Use">Different Types of AI Art for Commercial Use</span></h2>
-<p>So, when we talk about using AI art for making money, there are various types you can explore. Around AI, you’ll find different kinds of AI-generated content for commercial purposes. Take, for example, using an AI to generate images using text prompts to produce different AI output images. It’s like magic! Open AI, in terms of use, is a popular AI for this. Its generator is the best for commercial usage. You can create four images, even stock images, that look super professional. This kind of AI art is gaining traction in the commercial world because it can generate high-quality images without much hassle. Plus, it’s backed by AI research, making it a reliable option for businesses looking to spice up their visuals.</p>
-<div class="w-full text-token-text-primary" dir="auto" data-testid="conversation-turn-7" data-scroll-anchor="false">
-<div class="px-4 py-2 justify-center text-base md:gap-6 m-auto">
-<div class="flex flex-1 text-base mx-auto gap-3 juice:gap-4 juice:md:gap-6 md:px-5 lg:px-1 xl:px-5 md:max-w-3xl lg:max-w-[40rem] xl:max-w-[48rem]">
-<div class="relative flex w-full min-w-0 flex-col agent-turn">
-<div class="flex-col gap-1 md:gap-3">
-<div class="flex flex-grow flex-col max-w-full">
-<div class="min-h-[20px] text-message flex flex-col items-start gap-3 whitespace-pre-wrap break-words [.text-message+&amp;]:mt-5 overflow-x-auto" dir="auto" data-message-author-role="assistant" data-message-id="1e9206d2-bf66-4ac6-9bb5-61baba7a7e75">
-<div class="markdown prose w-full break-words dark:prose-invert light">
-<p>Let’s explore the different types of AI art that are perfect for commercial use.</p>
-<ol><li><strong>OpenAI’s Generators:</strong> OpenAI is leading the pack when it comes to AI-generated content. Their generators can produce high-quality images using text prompts, making them ideal for commercial usage.</li>
-<li><strong>Different AI Models:</strong> From GPT-3 to DALL-E, there are different AI models available that can generate images based on text inputs. These models offer versatility in terms of the types of images they can create.</li>
-<li><strong>Output Images:</strong> Whether you need product visuals, illustrations, or graphics for your marketing materials, AI can generate output images to suit your needs.</li>
-<li><strong>Stock Images:</strong> AI-generated stock images are becoming increasingly popular in the commercial space. They offer a cost-effective alternative to traditional stock photography while maintaining high quality.</li>
-</ol><p>When it comes to choosing the best generator for your commercial projects, consider factors like ease of use, output quality, and terms of use. By leveraging the power of AI research, you can create compelling visuals that drive engagement and elevate your brand.</p>
-<h2 data-fontsize="40" data-lineheight="48px" class="fusion-responsive-typography-calculated" style="--fontSize: 40; line-height: 1.2; color: rgb(0, 0, 0);"><span id="Concluding_the_Discussion_on_AI_Art_for_Commercial_Use">Concluding the Discussion on AI Art for Commercial Use</span></h2>
-<p>In conclusion, AI art for commercial use is becoming a super helpful tool for many folks out there. With various AI generators and art tools available, creating digital art has never been easier. With the help of AI technology, users can easily generate AI images using platforms like Dalle and write prompt using ChatGPT, resulting in stunning image generated content. Whether you’re a small business or a big brand, using AI image creators like top AI image generators or online AI image tools can help you whip up stunning visuals in no time. Plus, with free trials and free credits offered by some platforms, you can test the waters before diving in. The use of AI-generated content opens up a world of possibilities for commercial applications. You can create new images for your website, social media posts, advertisements, and more without breaking a sweat. And the best part? You don’t need to be a professional artist to get started. Just plug in your ideas, tweak the settings, and voila! You’ve got yourself a final image ready to use. So why wait? Embrace the power of AI art tools and take your visual content game to the next level. It’s the best artificial intelligence assisting you in unleashing your creativity for commercial success!</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div></div></div></div></div>
-							</div>`,
-        date: new Date(),
-        author: "John Doe",
-        summary:
-          "Today, we’re diving into the fascinating world of AI art for commercial use and how it’s shaking up the business scene. Buckle up as we explore the potential applications, money-making schemes, and the juicy role AI art plays in gaming, entertainment, and digital media.",
-        imageUrl:
-          "https://www.airbrush.ai/wp-content/uploads/2024/05/Cream-Illustrative-Digital-Marketing-Banner-320x202.png",
-      },
-    ];
+    const newBlog = {
+      url: "headshot-generator",
+      title: "Headshot Generator - Airbrush",
+      content: `<div class="blog-detail-inenr-area pt--45 rts-privacy-section-gapBottom plr_sm--15">
+        <div class="container-bd">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="deal-wrapper">
+                      <h5 style="margin-bottom: 0px;">Headshot Generator</h5>
+                      <h1>Generate Professional Headshots From Images</h1>
+                      <h5>Revolutionize Your Portraits: AI Headshot Generator – The Future of Airbrushed Perfection</h5>
+                      <a
+                        target="_blank"
+                        href="https://app.airbrush.ai/signup"
+                        class="deal-btn"
+                        >
+                        Get started For Free
+                      </a>    
 
-    const result = await blogCollection.insertMany(newBlog);
+                      <h2 style="margin-top: 70px;">Watch Airbrush in Action</h2>
+                      <div style="padding: 2%; background-color:#3b086d; border-radius: 2rem;">
+                        <iframe width="1120" height="630" src="https://www.youtube.com/embed/Y0yoqVsVm7Q?enablejsapi=1&amp;wmode=opaque" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" id="player_1"></iframe>
+                      </div>
+
+                      <div style="margin-top: 100px;">
+                        <h1 style="text-align: center;">What is Headshot Generator?</h1>
+                        <img style="padding:20px;" src="https://www.airbrush.ai/wp-content/uploads/2023/04/Untitled-design-5-1200x381.png"/>
+                        <p style="text-align: center; padding-top:20px;">
+                            Introducing the AI Headshot Generator, an innovative airbrush tool that effortlessly enhances and perfects your portraits. Utilizing advanced AI algorithms, this generator effortlessly transforms ordinary selfies into stunning, professional-quality headshots. Experience the magic of instant photo retouching and elevate your personal brand or social media presence with this user-friendly, intuitive tool. Say goodbye to blemishes and hello to flawless, magazine-worthy photos!
+                        </p>
+                      </div>
+
+                      <div style="margin-top: 100px;">
+                        <h2>Start Using Headshot Generator For Free Below</h2>
+                        <h6>If you need help, please refer to the video tutorial above or the detailed step-by-step instructions enlisted below.</h6>
+                        <iframe src="https://app.airbrush.ai/signup?swap_head=%20Acronym%20Generator%3Cbr%3EPlease%20complete%20the%20signup%20form%20below%20to%20Use%20Acronym%20Generator%20for%20free&amp;ad_ref=AcronymGenerator&amp;redirect_url=boss-mode" title="Writecream - AI Powered Acronym Generator" style="width: 100%; height: 600px; margin-top: 30px; border: 3px solid #f86635; padding: 10px;"></iframe>
+                      </div>
+
+                      <div style="margin-top: 100px;">
+                        <h2>Follow the simple steps below to get started.</h1>
+                        <div class="generator-flex">
+                            <div class="generator-flex-para">
+                                <h5>STEP 1- Login to your Airbrush account & select Image Variations</h5>
+                                <p>
+                                    From Airbrush Dashboard Select Image Variations tool to get started.
+                                </p>
+                            </div>
+                            <div class="generator-flex-img">
+                                <img src="https://www.airbrush.ai/wp-content/uploads/2023/04/1-2-400x213.png"/>
+                            </div>
+                        </div>
+                         <div class="generator-flex" style="flex-direction: row-reverse;">
+                            <div class="generator-flex-para">
+                                <h5>STEP 2- Enter the Url Of Your Image & Give Description</h5>
+                                <p>
+                                  Enter your Image url. If you have image locally stored you can use this online tool to upload image and get the link : <a href="https://postimages.org/">https://postimages.org/</a>
+                                  <br/><br/>
+                                  Enter Given Description – Generate a professional headshot image
+                                </p>
+                            </div>
+                            <div class="generator-flex-img">
+                                <img src="https://www.airbrush.ai/wp-content/uploads/2023/04/1-3-400x167.png"/>
+                            </div>
+                        </div>
+                         <div class="generator-flex">
+                            <div class="generator-flex-para">
+                                <h5>STEP 3- Select AI Engine - Pix2Pix</h5>
+                                <p>
+                                    From Various AI Engines Select Pix2Pix
+                                </p>
+                            </div>
+                            <div class="generator-flex-img">
+                                <img src="https://www.airbrush.ai/wp-content/uploads/2023/04/1-4.png"/>
+                            </div>
+                        </div>
+                         <div class="generator-flex" style="flex-direction: row-reverse;">
+                            <div class="generator-flex-para">
+                                <h5>STEP 4- Select image dimensions</h5>
+                                <p>
+                                   Select your desired Image Dimensions.
+                                </p>
+                            </div>
+                            <div class="generator-flex-img">
+                                <img src="https://www.airbrush.ai/wp-content/uploads/2023/04/3.png"/>
+                            </div>
+                        </div>
+                        <div class="generator-flex">
+                            <div class="generator-flex-para">
+                                <h5>STEP 5- Advanced Options (Optional)</h5>
+                                <p>
+                                   If you want to you can select advanced options Like Seed, Negative Prompts and Any Guidance you want to give to ai to better understand your needs.
+                                </p>
+                            </div>
+                            <div class="generator-flex-img">
+                                <img src="https://www.airbrush.ai/wp-content/uploads/2023/04/5-400x128.png"/>
+                            </div>
+                        </div>
+                        <div class="generator-flex" style="flex-direction: row-reverse;">
+                            <div class="generator-flex-para">
+                                <h5>STEP 6- Click On Create Image Button.</h5>
+                                <p>
+                                   Finally click on Create image button and there you go😄
+                                </p>
+                            </div>
+                            <div class="generator-flex-img">
+                                <img src="https://www.airbrush.ai/wp-content/uploads/2023/04/5-400x128.png"/>
+                            </div>
+                        </div>
+                        <div class="generator-flex">
+                            <div class="generator-flex-para">
+                                <h5>STEP 7- Ta-da Your AI Generated Headshot Is Here.</h5>
+                                <p>
+                                   Ta-da you got your AI generated Headshot of your image. if it doesn’t meet to your expectations just click on Create Image button as many time you want and AI will create More Headshots with Variations for you. And you can download it directly.
+                                </p>
+                            </div>
+                            <div class="generator-flex-img">
+                                <img src="https://www.airbrush.ai/wp-content/uploads/2023/04/Untitled-design-6.png"/>
+                            </div>
+                        </div>
+                      </div>
+                        <a href="https://app.airbrush.ai/signup" class="deal-foot-sec">
+                            <i class="fa-solid fa-thumbs-up"></i>GET STARTED NOW
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>`,
+    };
+
+    const result = await generatorCollection.insertOne(newBlog);
     console.log("Blog post added successfully!", result.insertedId);
   } catch (error) {
     console.error("Error adding blog post:", error);

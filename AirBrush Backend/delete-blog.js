@@ -11,14 +11,13 @@ async function deleteBlogPost() {
     console.log("Connected to the database");
 
     const database = client.db("ai4chat");
-    const blogCollection = database.collection("blog-collection");
+    const generatorCollection = database.collection("generator-collection");
 
     const query = {
-      title:
-        "Exploring the Impact of Artificial Intelligence and AI Art in Education",
+      title: "Headshot Generator - Airbrush",
     };
 
-    const result = await blogCollection.deleteOne(query);
+    const result = await generatorCollection.deleteOne(query);
 
     if (result.deletedCount === 1) {
       console.log("Blog post deleted successfully!");

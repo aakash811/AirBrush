@@ -66,6 +66,7 @@ MongoClient.connect(connectionString, (err, client) => {
   const rootCollection = db.collection("root-collection");
   const blogCollection = db.collection("blog-collection");
   const gptCollection = db.collection("gpt-collection");
+  const generatorCollection = db.collection("generator-collection");
   const characterCollection = db.collection("character-collection");
 
   app.get("/pages/:url", async (req, res) => {
@@ -378,6 +379,10 @@ MongoClient.connect(connectionString, (err, client) => {
     res.render("free-tool");
   });
 
+  app.get("/free-tool-2", (req, res) => {
+    res.render("free-tool-2");
+  });
+
   app.get("/privacy-policy", (req, res) => {
     res.render("privacy-policy");
   });
@@ -392,34 +397,6 @@ MongoClient.connect(connectionString, (err, client) => {
 
   app.get("/lifetime-deal", (req, res) => {
     res.render("lifetime-deal");
-  });
-
-  app.get("/stable-diffusion-image-generator", (req, res) => {
-    res.render("stable-diffusion-image-generator");
-  });
-
-  app.get("/dall-e-2-image-generator", (req, res) => {
-    res.render("dall-e-2-image-generator");
-  });
-
-  app.get("/nft-art-creator", (req, res) => {
-    res.render("nft-art-creator");
-  });
-
-  app.get("/photo-to-painting-online", (req, res) => {
-    res.render("photo-to-painting-online");
-  });
-
-  app.get("/ai-art-generator", (req, res) => {
-    res.render("ai-art-generator");
-  });
-
-  app.get("/ai-face-generator", (req, res) => {
-    res.render("ai-face-generator");
-  });
-
-  app.get("/ai-photo-upscaler", (req, res) => {
-    res.render("ai-photo-upscaler");
   });
 
   app.get("/use-cases", async (req, res) => {
@@ -463,6 +440,34 @@ MongoClient.connect(connectionString, (err, client) => {
     } catch (error) {
       console.error("Error fetching pages:", error);
       res.status(500).send("Internal Server Error");
+    }
+  });
+
+  app.get("/:url", async (req, res) => {
+    try {
+      const generatorPage = await generatorCollection.findOne({
+        url: req.params.url,
+      });
+      if (!generatorPage) {
+        return res.redirect("/404");
+      }
+      // article.date = article.date.toISOString().split("T")[0];
+      // const relatedArticles = await blogCollection
+      //   .aggregate([
+      //     { $match: { url: { $ne: req.params.url } } },
+      //     { $sample: { size: 4 } },
+      //   ])
+      //   .toArray();
+      // relatedArticles.forEach((relatedArticle) => {
+      //   relatedArticle.date = relatedArticle.date.toISOString().split("T")[0];
+      // });
+      res.render("generator-page", {
+        generatorPage: generatorPage,
+        // relatedArticles: relatedArticles,
+      });
+    } catch (error) {
+      console.error("Error fetching blog article or related articles:", error);
+      res.redirect("/error-page");
     }
   });
 
