@@ -12,35 +12,6 @@
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://www.airbrush.ai/ai-art-generator</loc>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.airbrush.ai/ai-face-generator</loc>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.airbrush.ai/ai-photo-upscaler</loc>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.airbrush.ai/dall-e-2-image-generator</loc>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.airbrush.ai/nft-art-creator</loc>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.airbrush.ai/photo-to-painting-online</loc>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.airbrush.ai/stable-diffusion-image-generator</loc>
-  <lastmod>2023-09-21T17:24:35+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
   <loc>https://www.airbrush.ai/lifetime-deal</loc>
   <priority>0.80</priority>
 </url>
@@ -50,6 +21,11 @@
 </url>
 <url>
   <loc>https://www.airbrush.ai/free-tool</loc>
+  <lastmod>2023-09-21T17:24:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.airbrush.ai/free-tool-2</loc>
   <lastmod>2023-09-21T17:24:39+00:00</lastmod>
   <priority>0.80</priority>
 </url>
@@ -112,7 +88,11 @@
         </url>
     {{/each}}
 
-
-
-
+    {{#each generatorPage }}
+        <url>
+            <loc>https://www.airbrush.ai/{{this.url}}</loc>
+            <priority>0.80</priority>
+            <!-- Optionally add other XML nodes like <lastmod> or <changefreq> if relevant -->
+        </url>
+    {{/each}}
 </urlset>
