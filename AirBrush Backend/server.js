@@ -395,6 +395,10 @@ MongoClient.connect(connectionString, (err, client) => {
     res.render("tutorials");
   });
 
+  app.get("/temp-ai-page", (req, res) => {
+    res.render("temp-ai-page");
+  });
+
   app.get("/lifetime-deal", (req, res) => {
     res.render("lifetime-deal");
   });

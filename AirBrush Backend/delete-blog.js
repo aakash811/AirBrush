@@ -14,7 +14,7 @@ async function deleteBlogPost() {
     const generatorCollection = database.collection("generator-collection");
 
     const query = {
-      title: "Headshot Generator - Airbrush",
+      url: "ai-sketch-generator",
     };
 
     const result = await generatorCollection.deleteOne(query);

@@ -23149,6 +23149,7 @@ deal-foot-sec:focus {
 /* Style for the modal background */
 .modal {
   display: none; /* Hidden by default */
+  position: fixed; /* Ensures it stays in place */
   top: 0;
   left: 0;
   width: 100%;
@@ -23157,17 +23158,24 @@ deal-foot-sec:focus {
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  overflow: hidden; /* Prevent accidental overflow */
+  overflow-y: auto;
 }
+
 
 /* Modal Content */
 .modal-content {
   background-color: #fff;
-  padding-block: 20px;
+  padding: 20px; /* Simplified to avoid shorthand conflicts */
   border-radius: 8px;
-  width: 60%;
-  max-width: 90%;
+  width: 90%; /* Adjust for smaller screens */
+  max-width: 80%; /* Limit the maximum width */
+  max-height: 90%; /* Ensure content doesn't exceed viewport height */
+  overflow-y: auto; /* Add scroll for overflow content */
   text-align: left;
+  box-sizing: border-box; /* Include padding in width calculation */
 }
+
 
 .modal-content h3 {
   color: #060606;
@@ -23220,4 +23228,35 @@ deal-foot-sec:focus {
   .modal-btn {
     margin-left: 70%;
   }
+}
+.generator-title {
+  font-size: 36px;
+  line-height: 40px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.gene-flex {
+  display: flex;
+  vertical-align: middle;
+  padding-top: 30px;
+  gap: 5rem;
+}
+.gene-flex p,
+.gene-img {
+  min-width: 50%;
+}
+
+.gene-img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* .gene-img{
+  vertical-align: ;
+} */
+
+.gene-img img {
+  min-width: 100%;
 }
