@@ -435,8 +435,15 @@ MongoClient.connect(connectionString, (err, client) => {
       const articles = await blogCollection.find({}).toArray();
       const gpts = await gptCollection.find({}).toArray();
       const characters = await characterCollection.find({}).toArray();
+      const generatorPage = await generatorCollection.find({}).toArray();
       res.type("application/xml");
-      res.render("sitemap", { pages, articles, gpts, characters });
+      res.render("sitemap", {
+        pages,
+        articles,
+        gpts,
+        characters,
+        generatorPage,
+      });
     } catch (error) {
       console.error("Error fetching pages:", error);
       res.status(500).send("Internal Server Error");

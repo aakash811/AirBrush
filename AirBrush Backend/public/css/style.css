@@ -15860,7 +15860,7 @@ body.sal-disabled [data-sal|="flip"] {
 }
 
 .rts-banner-area-one {
-  height: 1000px;
+  height: 800px;
   position: relative;
 }
 
@@ -22427,7 +22427,7 @@ body.dark-version .mega-menu-item li a img {
 
 .hero-section {
   max-width: 50%;
-  margin-top: 20vh;
+  margin-top: 10vh;
 }
 
 @media (max-width: 1200px) {
