@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/fav.png">
+    <title>AI IMAGE GENERATOR - Airbrush</title>
+    <meta name="description"
+        content="Explore Airbrush Workflows and master the full potential of multi-platform chatbot interactions. Step-by-step guides for seamless AI engagement.">
+    <meta name="robots" content="index, follow">
+
+    <!-- FB meta tags -->
+    <meta property="og:title" content="AI Image Generator - Airbrush">
+    <meta property="og:description"
+        content="Explore Airbrush Workflows and master the full potential of multi-platform chatbot interactions. Step-by-step guides for seamless AI engagement.">
+    <meta property="og:image" content="https://i.postimg.cc/0NfzStnt/Airbrush.png">
+    <meta property="og:url" content="https://www.ai4chat.co">
+
+    <!-- Twitter meta tags -->
+    <meta name="twitter:title" content="AI Image Generator - Airbrush">
+    <meta name="twitter:description"
+        content="Explore Airbrush Workflows and master the full potential of multi-platform chatbot interactions. Step-by-step guides for seamless AI engagement.">
+    <meta name="twitter:image" content="https://i.postimg.cc/0NfzStnt/Airbrush.png">
+
+
+
+    <!-- bootstrap min css -->
+    <link rel="stylesheet preload" href="/css/plugins/fontawesome-6.css" as="style">
+    <link rel="stylesheet preload" href="/css/plugins/unicons.css" as="style">
+    <link rel="stylesheet preload" href="/css/plugins/swiper.min.css" as="style">
+    <link rel="stylesheet preload" href="/css/vendor/metismenu.css" as="style">
+    <link rel="stylesheet preload" href="/css/vendor/bootstrap.min.css" as="style">
+    <!-- custom css style -->
+    <link rel="stylesheet preload" href="/css/style.css" as="style">
+</head>
+
+<body class="dark-version">
+
+    {{> desktop-menu}}
+
+    <!-- rts breadcrumb area start-->
+    <div class="rts-bread-crumb-area bg_image">
+    </div>
+    <!-- rts breadcrumb area end -->
+
+    <!-- rts feature area start -->
+    <div class="rts-feature-area rts-section-gapBottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-conter-area">
+                        <h2 class="title">
+                            Generate AI-Powered Images from Text <br>Descriptions
+                        </h2>
+                        <p class="disc">
+                            Turn your text into visually stunning, AI-generated images with ease. Describe your vision,
+                            and our advanced AI model brings it to life. Explore endless possibilities by generating
+                            unique images directly from your words!
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="whatToGenerate" style="display: none;">Image</div>
+
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+            <style>
+                .uniqueContainer {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 20px;
+                }
+
+                .unique-left-column {
+                    flex: 1;
+                    padding: 150px;
+                    border-radius: 10px;
+                    box-sizing: border-box;
+                    margin-top: 25px;
+                }
+
+                .unique-right-column {
+                    flex: 1;
+                    padding: 20px;
+                    background: #f7f7f7;
+                    border-radius: 10px;
+                    border: 2px dotted #3996fb;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .uniqueCSS {
+                    width: 100%;
+                    max-width: 200px;
+                    padding: 10px;
+                    border: 1px solid #151f39;
+                    margin-right: 1%;
+                    cursor: pointer;
+                    text-align: center;
+                    background-color: #3996fb;
+                    color: white;
+                    border-radius: 5px;
+                    text-decoration: none;
+                    display: inline-block;
+                }
+
+                #generateOutput {
+                    background-color: #f86635;
+                    color: white;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+
+                #generateOutput:hover {
+                    background-color: #ffffff;
+                    color: #f86635;
+                }
+
+                #downloadImage {
+                    background-color: #3996fb;
+                    color: white;
+                    border-radius: 5px;
+                    padding: 10px;
+                    border: none;
+                    cursor: pointer;
+                    display: inline-block;
+                    margin-top: 10px;
+                }
+
+                #downloadImage:hover {
+                    background-color: #151f39;
+                    color: #ffffff;
+                }
+
+                .outputBoxes {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .outputBoxes>div {
+                    margin-top: 20px;
+                    background-color: transparent;
+                    position: relative;
+                    box-sizing: border-box;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .loading-spinner {
+                    display: none;
+                    text-align: center;
+                    margin-top: 20px;
+                }
+
+                #aspectRatioDropdown {
+                    background-color: #0e1424;
+                    border: 1px solid #ccc;
+                    padding: 8px;
+                    border-radius: 5px;
+                    width: 100%;
+                    max-width: 200px;
+                    appearance: none;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    text-align-last: center;
+                }
+
+                #aspectRatioDropdown::before {
+                    content: "Select Aspect Ratio";
+                    color: #888;
+                }
+
+                #promptText {
+                    width: 100%;
+                    height: 150px;
+                    padding: 10px;
+                    border-radius: 5px;
+                    border: 1px solid #ccc;
+                    box-sizing: border-box;
+                }
+
+                .registration-message {
+                    display: none;
+                    margin-top: 20px;
+                    /* Adjusted margin for better spacing */
+                    padding: 10px;
+                    border: 2px solid #3996fb;
+                    border-radius: 5px;
+                    background-color: #0e1424;
+                    color: #3996fb;
+                    text-align: center;
+                }
+
+                .registration-message a {
+                    color: #3996fb;
+                    text-decoration: underline;
+                }
+
+                @media screen and (max-width: 768px) {
+                    .unique-right-column {
+                        display: none;
+                    }
+
+                    .uniqueCSS {
+                        width: 100%;
+                        margin-bottom: 10px;
+                    }
+
+                    #aspectRatioDropdown {
+                        width: 100%;
+                    }
+
+                    #promptText {
+                        height: 120px;
+                    }
+                }
+                .instructions-tooltip {
+                    margin: 15px 0;
+                    padding: 12px 15px;
+                    background-color: #151f39;
+                    border-left: 4px solid #3996fb;
+                    border-radius: 0 5px 5px 0;
+                    position: relative;
+                }
+
+                .tooltip-trigger {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    color: #3996fb;
+                    background: transparent;
+                    border: none;
+                    cursor: pointer;
+                    padding: 8px;
+                    border-radius: 5px;
+                    transition: all 0.2s ease;
+                }
+
+                .tooltip-content {
+                    position: absolute;
+                    top: calc(100% + 10px);
+                    left: 0;
+                    width: 280px;
+                    padding: 16px;
+                    background: #151f39;
+                    border: 1px solid #3996fb;
+                    border-radius: 8px;
+                    color: #fff;
+                    font-size: 0.9rem;
+                    line-height: 1.5;
+                    opacity: 0;
+                    visibility: hidden;
+                    transform: translateY(-10px);
+                    transition: all 0.2s ease;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+                    z-index: 100;
+                }
+
+                .tooltip-trigger:hover + .tooltip-content,
+                .tooltip-content:hover {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateY(0);
+                }
+
+                .tooltip-example {
+                    margin: 12px 0;
+                    padding: 10px;
+                    background: rgba(57, 150, 251, 0.1);
+                    border-left: 3px solid #3996fb;
+                    border-radius: 0 4px 4px 0;
+                    font-style: italic;
+                }
+                .hover-box {
+                    padding: 10px;
+                    border: solid 1px #295d9f;
+                    border-radius: 5px;
+                    background: #0e1424;
+                    transition: background 0.3s ease;
+                }
+
+                .hover-box:hover {
+                    background: #1a2544;
+                }
+                .accordion-button {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    position: relative;
+                    transition: all 0.3s ease;
+                }
+
+                .chevron-icon {
+                    transition: transform 0.3s ease;
+                }
+
+                .rotate {
+                    transform: rotate(180deg);
+                }
+                .gen-images{
+                    min-width: 20%;
+                }
+            </style>
+
+            <div class="uniqueContainer" style="width: 100%;">
+                <div class="unique-left-column">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h2>Generate an Image</h2>
+
+                        <select id="aspectRatioDropdown">
+                            <option disabled selected>Select Aspect Ratio</option>
+                            <option value="1:1">1:1 (Square) - Best for Instagram posts</option>
+                            <option value="16:9">16:9 (Wide) - Ideal for YouTube thumbnails and landscape images
+                            </option>
+                            <option value="2:3">2:3 (Portrait) - Common for photos and print media</option>
+                            <option value="3:2">3:2 (Landscape) - Suitable for landscape photography</option>
+                            <option value="4:5">4:5 (Portrait) - Good for social media like Instagram stories</option>
+                            <option value="5:4">5:4 (Portrait) - Useful for high-quality print photos</option>
+                            <option value="9:16">9:16 (Vertical) - Perfect for TikTok and Instagram Reels</option>
+                            <option value="21:9">21:9 (Cinematic) - Ideal for wide screen displays and cinematic content
+                            </option>
+                            <option value="9:21">9:21 (Vertical Cinema) - For vertical cinematic content</option>
+                        </select>
+                    </div>
+
+                    <textarea id="promptText" placeholder="Enter your image prompt here"></textarea>
+                    <div class="instructions-tooltip">
+                        <button class="tooltip-trigger">
+                            <i class="fas fa-question-circle"></i>
+                            <span>How To Use</span>
+                        </button>
+                        
+                        <div class="tooltip-content">
+                            <h4>Quick Guide</h4>
+                            <p>Start your prompt with <strong>"Generate ai-generated images from text prompts"</strong> followed by the details of what you want to create. Here is example of a good image prompt:</p>
+                            
+                            <div class="tooltip-example">
+                                Generate a surreal landscape with floating islands and crystal waterfalls
+                            </div>
+                            
+                            <p>Check out the inspiration ideas below to get started!</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    Show Prompts For Inspiration
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div class="accordion-body" style="background:#151f39">
+                                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                                        <div class="hover-box">
+                                            <p>A futuristic city skyline at night with bioluminescent trees and flying vehicles navigating between towering skyscrapers.</p>
+                                        </div>
+                                        <div class="hover-box">
+                                            <p>A whimsical steampunk airship festival with colorful balloons, clockwork machinery, and people dressed in Victorian-era attire.</p>
+                                        </div>
+                                        <div class="hover-box">
+                                            <p>A serene, underwater scene depicting a coral reef garden inhabited by both real and mythical sea creatures lit by shafts of sunlight.</p>
+                                        </div>
+                                        <div class="hover-box">
+                                            <p>A quiet winter wonderland where a magical snowman village comes to life under the northern lights, complete with tiny igloos and snow sculptures.</p>
+                                        </div>
+                                        <div class="hover-box">
+                                            <p>A bustling alien marketplace on a distant planet, filled with diverse extraterrestrial species, vibrant stalls, and cosmic goods under a pink sky.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 10px;">
+                        <button class="uniqueCSS" id="generateOutput">Generate Image</button>
+                        <div class="loading-spinner">
+                            <i class="fas fa-spinner fa-spin"></i> Loading...
+                        </div>
+                    </div>
+
+                    <div class="registration-message">
+                        You have reached the free generation limit. <br>
+                        <a href="https://app.writecream.com/" target="_blank">Register here</a> to continue generating
+                        images.
+                    </div>
+
+                    <div class="outputBoxes"></div>
+                </div>
+            </div>
+
+            <script>
+                const hoverBoxes = document.querySelectorAll('.hover-box');
+
+                const promptText = document.getElementById('promptText');
+
+                hoverBoxes.forEach((hoverBox) => {
+                    hoverBox.addEventListener('click', () => {
+                        const text = hoverBox.querySelector('p').textContent;
+                        promptText.value = text;
+                    });
+                });
+
+
+                function getUserId() {
+                    let userId = document.cookie.split('; ').find(row => row.startsWith('userid='));
+                    if (!userId) {
+                        userId = 'user' + Math.random().toString(36).substring(2, 12);
+                        document.cookie = 'userid=' + userId + ';path=/';
+                    }
+                    return userId.split('=')[1];
+                }
+
+                function getFileNameFromPrompt(prompt) {
+                    const keywords = prompt.split(' ').slice(0, 3);
+                    return keywords.join('-').toLowerCase() || 'generated_image';
+                }
+
+                function checkGenerationLimit() {
+                    const userId = getUserId();
+                    let generationCount = localStorage.getItem(userId) || 0;
+                    return parseInt(generationCount, 10);
+                }
+
+                function incrementGenerationCount() {
+                    const userId = getUserId();
+                    let generationCount = localStorage.getItem(userId) || 0;
+                    generationCount = parseInt(generationCount, 10) + 1;
+                    localStorage.setItem(userId, generationCount);
+                    return generationCount;
+                }
+
+                function showRegistrationMessage() {
+                    document.querySelector('.registration-message').style.display = 'block';
+                }
+
+                async function generateImage(event) {
+                    const prompt = document.getElementById('promptText').value.trim();
+                    let aspectRatio = document.getElementById('aspectRatioDropdown').value;
+                    const outputContainer = document.querySelector('.outputBoxes');
+                    const spinner = document.querySelector('.loading-spinner');
+                    const registrationMessage = document.querySelector('.registration-message');
+
+                    if (!prompt) {
+                        alert("Please enter a prompt")
+                        return;
+                    }
+                    if (!aspectRatio || aspectRatio == "Select Aspect Ratio") {
+                        alert("Please Select an Aspect Ratio")
+                        return;
+                    }
+
+                    // Check generation count
+                    const generationCount = checkGenerationLimit();
+                    if (generationCount >= 5) {
+                        showRegistrationMessage();
+                        return;
+                    }
+
+                    // Increment generation count
+                    incrementGenerationCount();
+
+                    // Hide registration message
+                    registrationMessage.style.display = 'none';
+
+                    // Show loading spinner
+                    spinner.style.display = 'block';
+                    // disable the generate btn
+                    event.target.disabled = true;
+
+                    const apiUrl = `${window.location.origin}/api/image/generate?prompt=${encodeURIComponent(prompt)}&aspect_ratio=${aspectRatio}`;
+
+                    try {
+                        const response = await fetch(apiUrl);
+                        const data = await response.json();
+
+                        if (data.status != "success") {
+                            alert("Something went wrong")
+                            // Hide spinner
+                            spinner.style.display = 'none';
+                            //enableing the generate btn
+                            event.target.disabled = false;
+                            return;
+                        }
+
+                        const imageUrl = data.image_link;
+
+                        // Hide spinner
+                        spinner.style.display = 'none';
+                        //enableing the generate btn
+                        event.target.disabled = false;
+
+                        const imgElement = document.createElement('img');
+                        imgElement.src = imageUrl;
+                        imgElement.alt = "Generated Image";
+                        imgElement.style.maxWidth = '100%';
+
+                        const downloadButton = document.createElement('button');
+                        downloadButton.id = 'downloadImage';
+                        downloadButton.textContent = 'Download Image';
+                        downloadButton.classList.add('uniqueCSS');
+
+                        downloadButton.addEventListener('click', function (e) {
+                            e.preventDefault();
+                            downloadImage(imageUrl, prompt);
+                        });
+
+                        const imageContainer = document.createElement('div');
+                        imageContainer.appendChild(imgElement);
+                        imageContainer.appendChild(downloadButton);
+
+                        outputContainer.innerHTML = '';
+                        outputContainer.appendChild(imageContainer);
+
+                    } catch (error) {
+                        spinner.style.display = 'none';
+                        //enableing the generate btn
+                        event.target.disabled = false;
+                        alert('Error generating image: ' + error.message);
+                    }
+                }
+
+
+                function downloadImage(url, filename) {
+                    fetch(url)
+                        .then(response => response.blob())
+                        .then(blob => {
+                            const link = document.createElement('a');
+                            link.href = URL.createObjectURL(blob);
+                            link.download = getFileNameFromPrompt(filename) + '.png';
+                            link.click();
+                        })
+                        .catch(error => console.error('Error downloading image:', error));
+                }
+
+                document.getElementById('generateOutput').addEventListener('click', generateImage);
+            </script>
+
+
+            <div class="row mt--50">
+                <div class="col-lg-12">
+                    <!-- single openup feature area start -->
+                    <div class="single-feature-area-start index-feature">
+                        <div class="gen-images">
+                            <img src="/images/feature/6.png" alt="feature_image" loading="lazy">
+                        </div>
+                        <div class="featue-content-area">
+                            <span class="pre">01</span>
+                            <h2 class="title">Airbrush Text to Image Tool
+                            </h2>
+                            <p class="disc">
+                                Login to Airbrush and transform your text descriptions into captivating AI-generated
+                                images. Explore creativity with our advanced text-to-image tool today!
+                            </p>
+                            <a href="https://app.airbrush.ai/signup" class="rts-btn btn-primary">Get Started For
+                                Free</a>
+                        </div>
+                    </div>
+                    <!-- single openup feature area end -->
+                    <!-- single openup feature area start -->
+                    <div class="single-feature-area-start index-feature bg-red-l">
+
+                        <div class="featue-content-area">
+                            <span class="pre">02</span>
+                            <h2 class="title">Upscale Images
+                            </h2>
+                            Enhance and refine your photos with ease, preserving content and key-details. Unleash the power of AI-driven clarity, sharpness, and upscaling.
+                            </p>
+                            <a href="https://app.airbrush.ai/signup" class="rts-btn btn-primary">Get Started For
+                                Free</a>
+                        </div>
+                        <div class="gen-images">
+                            <img src="/images/feature/3.png" alt="feature_image" loading="lazy">
+                        </div>
+                    </div>
+                    <!-- single openup feature area end -->
+                    <!-- single openup feature area start -->
+                    <div class="single-feature-area-start index-feature bg-blue-l">
+                        <div class="gen-images">
+                            <img src="/images/feature/4.png" alt="feature_image" loading="lazy">
+                        </div>
+                        <div class="featue-content-area">
+                            <span class="pre">03</span>
+                            <h2 class="title">Create Blog Covers 
+                            </h2>
+                            <p class="disc">
+                                Create stunning blog cover images effortlessly using advanced one-click AI technology. Transform your visuals and captivate your audience!
+                            </p>
+                            <a href="https://app.airbrush.ai/signup" class="rts-btn btn-primary">Get Started For
+                                Free</a>
+                        </div>
+                    </div>
+                    <!-- single openup feature area end -->
+                    <!-- single openup feature area start -->
+                    <div class="single-feature-area-start index-feature bg-red-l">
+
+                        <div class="featue-content-area">
+                            <span class="pre">04</span>
+                            <h2 class="title">Create Image Variants 
+                            </h2>
+                            <p class="disc">
+                                Effortlessly create stunning image variations with advanced AI algorithms, transforming your visuals like never before.
+                            </p>
+                            <a href="https://app.airbrush.ai/signup" class="rts-btn btn-primary">Get Started For
+                                Free</a>
+                        </div>
+                        <div class="gen-images">
+                            <img src="/images/feature/5.png" alt="feature_image" loading="lazy">
+                        </div>
+                    </div>
+                    <!-- single openup feature area end -->
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- rts feature area end -->
+
+    {{> apps}}
+
+    {{> faq}}
+
+    {{> apps}}
+
+    {{> cta}}
+
+    {{> footer}}
+
+
+    <div id="anywhere-home" class="">
+    </div>
+
+    {{> mobile-menu}}
+
+    <!-- rts backto top start -->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+                style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;">
+            </path>
+        </svg>
+    </div>
+    <!-- rts backto top end -->
+
+
+    <script src="/js/vendor/jquery.min.js" defer></script>
+    <script src="/js/vendor/metismenu.js" defer></script>
+    <script src="/js/plugins/bootstrap.min.js" defer></script>
+    <script src="/js/plugins/swiper.js" defer></script>
+    <script src="/js/plugins/contact.form.js" defer></script>
+    <script src="/js/main.js" defer></script>
+
+</body>
+
+
+
+</html>

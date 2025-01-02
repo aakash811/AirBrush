@@ -68,6 +68,103 @@ MongoClient.connect(connectionString, (err, client) => {
   const gptCollection = db.collection("gpt-collection");
   const generatorCollection = db.collection("generator-collection");
   const characterCollection = db.collection("character-collection");
+  const modelsCollection = db.collection("models");
+  const imageModelsCollection = db.collection("image-models");
+  const apiFeatureCollection = db.collection("api-feature-collection");
+
+  app.get("/model/:model", async (req, res) => {
+    modelsCollection.findOne(
+      { modelId: req.params.model },
+      async (err, model) => {
+        // 21/10/2024 using modelId instead of modelName for case-sensitivity
+        if (!model) {
+          return res.redirect("/404");
+        } else {
+          res.render("model", {
+            pageTitle: model.pageTitle,
+            metaDescription: model.metaDescription,
+            url: model.url,
+            modelName: model.modelName,
+            modelIntro: model.modelIntro,
+            modelDescription: model.modelDescription,
+            whyToChoose: model.whyToChoose,
+            howToAccess: model.howToAccess,
+            apiExample: model.apiExample,
+            faq: model.faq,
+          });
+        }
+      }
+    );
+  });
+
+  app.get("/image-model/:model", async (req, res) => {
+    imageModelsCollection.findOne(
+      { modelId: req.params.model },
+      async (err, model) => {
+        if (!model) {
+          return res.redirect("/404");
+        } else {
+          res.render("image-model", {
+            modelId: model.modelId,
+            modelName: model.modelName,
+            metaDescription: model.metaDescription,
+            modelIntro: model.modelIntro,
+            modelDescription: model.modelDescription,
+            supportedResolutions: model.supportedResolutions,
+            faq: model.faq,
+            imagePrompt: model.imagePrompt,
+          });
+        }
+      }
+    );
+  });
+
+  app.get("/model/image/:name", async (req, res) => {
+    imageModelsCollection.findOne(
+      { modelId: req.params.name },
+      async (err, model) => {
+        if (!model) {
+          return res.redirect("/404");
+        } else {
+          res.render("ai-image-model", {
+            modelId: model.modelId,
+            modelName: model.modelName,
+            modelIntro: model.modelIntro,
+            modelDescription: model.modelDescription,
+            imagePrompt: model.imagePrompt,
+          });
+        }
+      }
+    );
+  });
+
+  app.get("/feature/api/:name", async (req, res) => {
+    apiFeatureCollection.findOne(
+      { featureId: req.params.name },
+      async (err, feature) => {
+        if (!feature) {
+          return res.redirect("/404");
+        } else {
+          res.render("api-feature", {
+            featureId: feature.featureId,
+            title: feature.title,
+            metaDescription: feature.metaDescription,
+            featureName: feature.featureName,
+            apiExample: feature.apiExample,
+            header: feature.header,
+            howToAccess: feature.howToAccess,
+            whyToChoose: feature.whyToChoose,
+            apiDetails: feature.apiDetails,
+            faq: feature.faq,
+          });
+        }
+      }
+    );
+  });
+
+  app.get("/bulk-create-image-pages", async (req, res) => {
+    res.render("bulk-create-image-pages");
+  });
 
   app.get("/pages/:url", async (req, res) => {
     rootCollection.findOne({ url: req.params.url }, async (err, page) => {
@@ -514,6 +611,31 @@ MongoClient.connect(connectionString, (err, client) => {
   function ValidateEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
+  }
+});
+
+app.get("/api/image/generate", async (req, res) => {
+  const prompt = req.query.prompt;
+  const aspectRatio = req.query.aspect_ratio;
+
+  if (!prompt || !aspectRatio) {
+    return res
+      .status(400)
+      .json({ error: "Missing prompt or aspect_ratio parameter" });
+  }
+
+  try {
+    const apiUrl = `https://4vzkiolgbe.execute-api.us-east-1.amazonaws.com/default/ai_image?prompt=${encodeURIComponent(
+      prompt
+    )}&aspect_ratio=${aspectRatio}&link=${encodeURIComponent(
+      "writecream.com"
+    )}`;
+    const response = await fetch(apiUrl);
+    const imageDetails = await response.json();
+    res.json(imageDetails);
+  } catch (error) {
+    console.error("Error generating image:", error);
+    res.status(500).json({ error: "Internal Server Error" });
   }
 });
 
